@@ -124,6 +124,16 @@ const Home = () => {
         </div>
       </section>
 
+      {/* BACKDROP FOR MOBILE ONLY */}
+      <div className="relative min-h-36">
+        <Image
+          src="/assets/images/backdrop-left.svg"
+          alt="backdrop-left"
+          className="absolute block md:hidden"
+          width={300}
+          height={300}
+        />
+      </div>
       {/* PROCESS SECTION */}
       <section className="flex-col gap-6 py-4 my-6 text-center flex-center">
         <h2 className="tracking-[0.2rem] font-light">STEP BY STEP PROCESS</h2>
@@ -218,7 +228,7 @@ const Home = () => {
           </span>
         </div>
 
-        {/* For moble */}
+        {/* For mobile */}
         <div className="md:hidden"></div>
       </section>
     </>
