@@ -68,7 +68,7 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex flex-col items-center justify-center px-6 mx-auto transition-all max-w-7xl sm:px-16;
+  @apply relative z-10 flex flex-col items-center justify-center px-6 mx-auto text-center transition-all max-w-7xl sm:px-16;
 }
 
 /* .black_btn {
@@ -79,8 +79,8 @@
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm flex items-center justify-center;
 } */
 
-.head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+.section_head {
+  @apply text-4xl font-semibold;
 }
 
 /* .orange_gradient {
