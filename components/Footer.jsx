@@ -65,7 +65,7 @@ const ALL_LINKS = [Home, About, Portfolio, Faq];
 
 const Footer = () => {
   return (
-    <footer className="flex flex-wrap px-4 py-16 bg-gray-300 gap-x-16 md:px-20 md:gap-x-36">
+    <footer className="flex flex-wrap px-4 py-16 mt-4 bg-gray-300 gap-x-16 md:px-20 md:gap-x-36">
       {ALL_LINKS.map((links) => (
         <div key={links} className="mb-5">
           <Link href="/">

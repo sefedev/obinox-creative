@@ -80,7 +80,10 @@
 } */
 
 .section_head {
-  @apply text-4xl font-semibold;
+  @apply tracking-[0.2rem] font-light;
+}
+.section_subhead {
+  @apply mb-8 text-4xl font-semibold;
 }
 
 /* .orange_gradient {

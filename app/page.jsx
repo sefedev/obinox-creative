@@ -1,33 +1,11 @@
+"use client";
+
+import { Tabs } from "@/components/Tab";
+import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
 import React from "react";
 
 const Home = () => {
-  const TESTIMONY = [
-    {
-      name: "Atop",
-      width: 111,
-    },
-    {
-      name: "Cardic",
-      width: 118,
-    },
-    {
-      name: "Carpe-diem",
-      width: 161,
-    },
-    {
-      name: "Cwito",
-      width: 121,
-    },
-    {
-      name: "I-Varse",
-      width: 117,
-    },
-    {
-      name: "Owlya",
-      width: 127,
-    },
-  ];
   return (
     <>
       {/* BACKDROP */}
@@ -134,10 +112,11 @@ const Home = () => {
           height={300}
         />
       </div>
+
       {/* PROCESS SECTION */}
       <section className="flex-col gap-6 py-4 my-6 text-center flex-center">
-        <h2 className="tracking-[0.2rem] font-light">STEP BY STEP PROCESS</h2>
-        <h1 className="section_head">Design with ease</h1>
+        <h2 className="section_head">STEP BY STEP PROCESS</h2>
+        <h1 className="section_subhead">Design with ease</h1>
 
         {/* For desktop */}
         <div className=" flex-col gap-4 hidden min-w-[876px] text-left md:flex">
@@ -152,7 +131,7 @@ const Home = () => {
               1
             </span>
             <div className="">
-              <h3 className="mb-4 text-lg font-semibold">Ideas and Research</h3>
+              <h3 className="mb-2 text-lg font-semibold">Ideas and Research</h3>
               <p className="max-w-xs text-sm ">
                 Ideas and solutions for the design problems, I study target
                 users' needs, behaviors, and pain points through interviews,
@@ -163,7 +142,7 @@ const Home = () => {
 
           <span className="flex items-center justify-between">
             <div className="">
-              <h3 className="mb-4 text-lg font-semibold">
+              <h3 className="mb-2 text-lg font-semibold">
                 Structure and design
               </h3>
               <p className="max-w-xs text-sm ">
@@ -194,7 +173,7 @@ const Home = () => {
               3
             </span>
             <div className="">
-              <h3 className="mb-4 text-lg font-semibold">
+              <h3 className="mb-2 text-lg font-semibold">
                 Testing and Implementing
               </h3>
               <p className="max-w-xs text-sm ">
@@ -207,7 +186,7 @@ const Home = () => {
 
           <span className="flex items-center justify-between">
             <div className="">
-              <h3 className="mb-4 text-lg font-semibold">
+              <h3 className="mb-2 text-lg font-semibold">
                 Launch and Documentation
               </h3>
               <p className="max-w-xs text-sm">
@@ -229,7 +208,71 @@ const Home = () => {
         </div>
 
         {/* For mobile */}
-        <div className="md:hidden"></div>
+        <div className="flex flex-col gap-8 md:hidden">
+          {PROCESS.map(({ number, title, desc }) => (
+            <span
+              key={number}
+              className="flex flex-col items-center justify-between gap-6"
+            >
+              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                {number}
+              </span>
+              <Image
+                src={`/assets/images/pro_card_${number}.svg`}
+                alt="Card 1"
+                width={350}
+                height={150}
+              />
+
+              <div className="">
+                <h3 className="mb-2 text-lg font-semibold">{title}</h3>
+                <p className="max-w-xs text-sm ">{desc}</p>
+              </div>
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* SERVICE SECTION */}
+      <section className="flex-col gap-6 py-4 my-6 text-center flex-center">
+        <h2 className="section_head">EXPLORE MY SERVICES</h2>
+        <h1 className="section_subhead">Get Started</h1>
+
+        {/* For Mobile */}
+
+        <div className="flex-col gap-8 flex-center md:hidden">
+          {SERVICE.map(({ title, desc, color }, id) => (
+            <div key={id} className="w-full text-white">
+              <div className={`p-6 rounded-t-lg`} style={{ background: color }}>
+                {title}
+              </div>
+              <div className="px-4 py-6 text-sm bg-gray-950 h-[18rem] grid place-items-center">
+                {desc}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* For Desktop */}
+        <>
+          <Tabs />
+        </>
+
+        <>
+          <Image
+            src="/assets/images/setting.svg"
+            alt="Settings"
+            width={40}
+            height={40}
+          />
+          <h3 className="mb-4">
+            Get the best services and enjoy a wonderful design experience
+          </h3>
+          <p className="text-sm">Check out some of our designs</p>
+          <button className="p-6 text-sm text-white transition duration-300 bg-gray-900 border border-gray-900 rounded-lg hover:text-black hover:bg-white">
+            Click to see designs
+          </button>
+        </>
       </section>
     </>
   );
