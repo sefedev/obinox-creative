@@ -3,26 +3,29 @@
 import { Tabs } from "@/components/Tab";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Home = () => {
+  const [first, setFirst] = useState(true);
   return (
     <>
       {/* BACKDROP */}
-      <Image
-        src="/assets/images/backdrop-left.svg"
-        alt="backdrop-left"
-        className="absolute top-0 hidden -z-50 -left-10 md:block"
-        width={300}
-        height={300}
-      />
-      <Image
-        src="/assets/images/backdrop-right.svg"
-        alt="backdrop-right"
-        className="absolute top-0 hidden -z-50 -right-10 md:block"
-        width={300}
-        height={300}
-      />
+      <>
+        <Image
+          src="/assets/images/backdrop-left.svg"
+          alt="backdrop-left"
+          className="absolute top-0 hidden -z-50 -left-10 md:block"
+          width={300}
+          height={300}
+        />
+        <Image
+          src="/assets/images/backdrop-right.svg"
+          alt="backdrop-right"
+          className="absolute top-0 hidden -z-50 -right-10 md:block"
+          width={300}
+          height={300}
+        />
+      </>
 
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center my-6 gap-y-8">
@@ -103,13 +106,13 @@ const Home = () => {
       </section>
 
       {/* BACKDROP FOR MOBILE ONLY */}
-      <div className="relative min-h-36">
+      <div className="relative w-full h-40 mb-24 -inset-x-6">
         <Image
-          src="/assets/images/backdrop-left.svg"
+          src="/assets/images/backdrop-mobile.png"
           alt="backdrop-left"
-          className="absolute block md:hidden"
-          width={300}
-          height={300}
+          className="absolute w-[22rem] top-0 h-[14rem] block md:hidden"
+          width={250}
+          height={250}
         />
       </div>
 
@@ -239,7 +242,6 @@ const Home = () => {
         <h1 className="section_subhead">Get Started</h1>
 
         {/* For Mobile */}
-
         <div className="flex-col gap-8 flex-center md:hidden">
           {SERVICE.map(({ title, desc, color }, id) => (
             <div key={id} className="w-full text-white">
@@ -254,20 +256,24 @@ const Home = () => {
         </div>
 
         {/* For Desktop */}
-        <>
-          <Tabs />
-        </>
+        <Tabs first={first} setFirst={setFirst} />
 
         <>
-          <Image
-            src="/assets/images/setting.svg"
-            alt="Settings"
-            width={40}
-            height={40}
-          />
-          <h3 className="mb-4">
-            Get the best services and enjoy a wonderful design experience
-          </h3>
+          {first ? (
+            <></>
+          ) : (
+            <>
+              <Image
+                src="/assets/icons/setting-dark.svg"
+                alt="Settings"
+                width={40}
+                height={40}
+              />
+              <h3 className="mb-4">
+                Get the best services and enjoy a wonderful design experience
+              </h3>
+            </>
+          )}
           <p className="text-sm">Check out some of our designs</p>
           <button className="p-6 text-sm text-white transition duration-300 bg-gray-900 border border-gray-900 rounded-lg hover:text-black hover:bg-white">
             Click to see designs

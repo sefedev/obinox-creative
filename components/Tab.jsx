@@ -1,7 +1,8 @@
 import { SERVICE, tabsData } from "@/utils/constant";
+import Image from "next/image";
 import { useState } from "react";
 
-export function Tabs() {
+export function Tabs({ first, setFirst }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
@@ -19,11 +20,14 @@ export function Tabs() {
                 idx === 2 && "rounded-tr-md"
               } transition-colors duration-300 text-white ${
                 idx === activeTabIndex
-                  ? "border-teal-500"
+                  ? "bg-black"
                   : "border-transparent hover:border-gray-200"
               }`}
               // Change the active tab on click.
-              onClick={() => setActiveTabIndex(idx)}
+              onClick={() => {
+                setActiveTabIndex(idx);
+                setFirst(false);
+              }}
             >
               {title}
             </button>
@@ -31,11 +35,31 @@ export function Tabs() {
         })}
       </div>
       {/* Show active tab content. */}
-      <div className="flex flex-col justify-start h-[14rem] px-24 py-4 text-white bg-black text-wrap rounded-b-md">
-        <h3 className={`text-2xl font-semibold text-primary-orange mb-2 `}>
-          {SERVICE[activeTabIndex].title}
-        </h3>
-        <p className="text-sm">{SERVICE[activeTabIndex].desc}</p>
+      <div
+        className={`flex flex-col ${
+          first ? "justify-center" : "justify-start"
+        } h-[14rem] px-16 py-4 w-full text-white bg-black text-wrap rounded-b-md`}
+      >
+        {first ? (
+          <div className="grid gap-2 place-items-center">
+            <Image
+              src="/assets/icons/setting-light.svg"
+              alt="Settings"
+              width={40}
+              height={40}
+            />
+            <h3 className="mb-4">
+              Get the best services and enjoy a wonderful design experience
+            </h3>
+          </div>
+        ) : (
+          <>
+            <h3 className={`text-2xl font-semibold text-primary-orange mb-2 `}>
+              {SERVICE[activeTabIndex].title}
+            </h3>
+            <p className="text-sm">{SERVICE[activeTabIndex].desc}</p>
+          </>
+        )}
       </div>
     </div>
   );
