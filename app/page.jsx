@@ -106,7 +106,7 @@ const Home = () => {
       </section>
 
       {/* BACKDROP FOR MOBILE ONLY */}
-      <div className="relative w-full h-40 mb-24 -inset-x-6">
+      <div className="relative w-full h-40 mb-24 md:hidden -inset-x-6">
         <Image
           src="/assets/images/backdrop-mobile.png"
           alt="backdrop-left"
