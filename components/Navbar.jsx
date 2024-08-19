@@ -74,7 +74,7 @@ const Navbar = () => {
       <div
         className={`${
           openNav ? "block" : "hidden"
-        } fixed flex inset-0 h-screen w-full text-white z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1  flex-col py-36 items-center`}
+        } fixed flex inset-0 h-screen w-full  z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1  flex-col py-36 items-center`}
       >
         <div className="flex-between w-[70%] mb-8">
           <button className="max-w-fit" onClick={() => setOpenNav(false)}>
