@@ -1,3 +1,47 @@
+export const HOME = [
+  {
+    title: "Process",
+    link: "#process",
+  },
+  {
+    title: "Services",
+    link: "#services",
+  },
+];
+
+export const ABOUT = [
+  {
+    title: "Services",
+    link: "#about-services",
+  },
+  {
+    title: "Skills",
+    link: "#skills",
+  },
+];
+
+export const PORTFOLIO = [
+  {
+    title: "Branding",
+    link: "#portfolio",
+  },
+  {
+    title: "Contact",
+    link: "#portfolio-contact",
+  },
+];
+
+export const FAQ = [
+  {
+    title: "Question",
+    link: "#question",
+  },
+  {
+    title: "Contact",
+    link: "#contact",
+  },
+];
+
 export const TESTIMONY = [
   {
     name: "Atop",
