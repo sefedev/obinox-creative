@@ -43,13 +43,17 @@ const Navbar = () => {
             <Link href="/faq">Faq</Link>
           </li>
         </ul>
-        <button className="hidden max-w-fit md:block">
+        <button
+          className={`hidden max-w-fit p-1 rounded-md bg-black md:block ${
+            isDark && "bg-primary-orange"
+          }`}
+          onClick={toggleDarkMode}
+        >
           <Image
             src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
             alt="DarkMode"
-            width={18}
-            height={18}
-            onClick={toggleDarkMode}
+            width={16}
+            height={16}
           />
         </button>
       </div>
@@ -70,7 +74,7 @@ const Navbar = () => {
       <div
         className={`${
           openNav ? "block" : "hidden"
-        } fixed flex inset-0 h-screen w-full z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1  flex-col py-36 items-center`}
+        } fixed flex inset-0 h-screen w-full text-white z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1  flex-col py-36 items-center`}
       >
         <div className="flex-between w-[70%] mb-8">
           <button className="max-w-fit" onClick={() => setOpenNav(false)}>
@@ -81,7 +85,12 @@ const Navbar = () => {
               height={24}
             />
           </button>
-          <button className="max-w-fit" onClick={() => setOpenNav(false)}>
+          <button
+            className={`max-w-fit p-1 rounded-md bg-black md:block ${
+              isDark && "bg-primary-orange"
+            }`}
+            onClick={toggleDarkMode}
+          >
             <Image
               src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
               alt="darkMode"

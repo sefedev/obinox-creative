@@ -274,10 +274,6 @@ const Home = () => {
               </h3>
             </>
           )}
-          <p className="text-sm">Check out some of our designs</p>
-          <button className="p-6 text-sm text-white transition duration-300 bg-gray-900 border border-gray-900 rounded-lg hover:text-black hover:bg-white">
-            Click to see designs
-          </button>
         </>
       </section>
     </>

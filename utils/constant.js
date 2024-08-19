@@ -119,3 +119,12 @@ export const ABOUT_SERVICE = [
     ],
   },
 ];
+
+export const WORK_FLOW = [
+  { title: "Figma", img: "figma" },
+  { title: "After Effects", img: "ae" },
+  { title: "Photoshop", img: "photoshop" },
+  { title: "Illustrator", img: "illustrator" },
+  { title: "Character Animator", img: "ch" },
+  { title: "Blender", img: "blender" },
+];
