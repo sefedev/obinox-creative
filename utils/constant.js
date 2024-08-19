@@ -78,3 +78,44 @@ export const tabsData = [
       "Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.",
   },
 ];
+
+export const ABOUT_SERVICE = [
+  {
+    title: "Website & Mobile app design",
+    services: [
+      "Custom Website Design",
+      "Responsive Design",
+      "User Experience (UX) Design",
+      "User Interface (UI) Design",
+      "Wireframing & Prototyping",
+      "Brand Integration",
+      "Maintenance and updates",
+    ],
+  },
+  {
+    title: "Graphic & Motion Design",
+    services: [
+      "Custom Website Design",
+      "Brand Identity Design: Logos, E-flyers",
+      "Explainer Videos",
+      "Logo Animations",
+      "Social Media Videos",
+      "Promotional Videos",
+      "Title Sequences",
+      "Motion Graphics for Web",
+    ],
+  },
+  {
+    title: "3D Product Modeling & animation",
+    services: [
+      "Detailed 3D Model",
+      "Concept Design",
+      "High-Resolution Texturing",
+      "Product Variations",
+      "Product Demonstrations",
+      "Exploded Views",
+      "Commercial and Marketing Animations",
+      "Motion Graphics Integration",
+    ],
+  },
+];
