@@ -95,18 +95,26 @@ const Home = () => {
       </section>
 
       {/* TESTIMONIAL SECTION */}
-      <section className="flex-col gap-6 py-4 my-6 flex-center">
+      <section className="flex-col gap-6 py-4 my-16 flex-center">
         <h2 className="tracking-[0.2rem] font-light">WE HAVE WORKED WITH</h2>
-        <div className="flex flex-wrap gap-x-8">
-          {TESTIMONY.map(({ name, width }) => (
-            <Image
-              src={`/assets/images/${name}.png`}
-              alt={name}
-              key={name}
-              width={width}
-              height={40}
-            />
-          ))}
+        <div className="relative flex flex-wrap my-6 md:overflow-hidden gap-x-10">
+          {/* FADED EDGES */}
+          <div className="absolute inset-x-0 top-0 h-full pointer-events-none">
+            <div className="absolute left-0 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
+            <div className="absolute right-0 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
+          </div>
+          <div class="flex flex-wrap gap-6 justify-center">
+            {TESTIMONY.map(({ name, width }) => (
+              <Image
+                src={`/assets/images/light/${name}.png`}
+                alt={name}
+                key={name}
+                width={120}
+                height={10}
+                className="h-[2.5rem]"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
