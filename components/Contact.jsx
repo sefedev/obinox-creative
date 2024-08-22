@@ -1,9 +1,11 @@
 import Image from "next/image";
-import React from "react";
 
 const Contact = () => {
   return (
-    <section className="flex flex-col w-screen gap-12 px-4 py-16 bg-orange-400 md:px-32 md:flex-row md:justify-center md:items-center">
+    <section
+      id="#contact"
+      className="flex flex-col w-screen gap-12 px-4 py-16 bg-orange-400 scroll-mt-[132rem] md:px-32 md:flex-row md:justify-center md:items-center"
+    >
       <div className="flex flex-col flex-1 gap-4 text-white">
         <Image
           src="/assets/images/marketing.png"

@@ -34,13 +34,28 @@ const Navbar = () => {
       <div className="items-center justify-between hidden gap-12 md:flex max-w-fit">
         <ul className="flex gap-8">
           <li>
-            <Link href="/about">About</Link>
+            <Link
+              href="/about"
+              className="transition-none duration-500 hover:text-primary-orange"
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/portfolio">Portfolio</Link>
+            <Link
+              href="/portfolio"
+              className="transition-none duration-500 hover:text-primary-orange"
+            >
+              Portfolio
+            </Link>
           </li>
           <li>
-            <Link href="/faq">Faq</Link>
+            <Link
+              href="/faq"
+              className="transition-none duration-500 hover:text-primary-orange"
+            >
+              Faq
+            </Link>
           </li>
         </ul>
         <button

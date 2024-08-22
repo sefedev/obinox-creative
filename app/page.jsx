@@ -3,6 +3,7 @@
 import { Tabs } from "@/components/Tab";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Home = () => {
@@ -84,9 +85,13 @@ const Home = () => {
           </ul>
         </div>
 
-        <button className="text-white btn-orange-gradient">
+        <Link
+          href="/faq#contact"
+          passHref
+          className="text-white border btn-orange-gradient "
+        >
           Make your ideas come alive
-        </button>
+        </Link>
       </section>
 
       {/* TESTIMONIAL SECTION */}

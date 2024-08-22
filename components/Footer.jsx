@@ -10,10 +10,20 @@ const Footer = () => {
         </Link>
         <ul>
           <li className="mb-1 text-sm">
-            <Link href="/">Process</Link>
+            <Link
+              href="/"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Process
+            </Link>
           </li>
           <li className="mb-1 text-sm">
-            <Link href="/">Services</Link>
+            <Link
+              href="/"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Services
+            </Link>
           </li>
         </ul>
       </div>
@@ -24,10 +34,20 @@ const Footer = () => {
         </Link>
         <ul>
           <li className="mb-1 text-sm">
-            <Link href="/about">Services</Link>
+            <Link
+              href="/about"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Services
+            </Link>
           </li>
           <li className="mb-1 text-sm">
-            <Link href="/about">Skills</Link>
+            <Link
+              href="/about"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Skills
+            </Link>
           </li>
         </ul>
       </div>
@@ -40,10 +60,20 @@ const Footer = () => {
         </Link>
         <ul>
           <li className="mb-1 text-sm">
-            <Link href="/portfolio">Portfolio</Link>
+            <Link
+              href="/portfolio"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Portfolio
+            </Link>
           </li>
           <li className="mb-1 text-sm">
-            <Link href="/portfolio">Contact</Link>
+            <Link
+              href="/portfolio"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
@@ -54,19 +84,29 @@ const Footer = () => {
         </Link>
         <ul>
           <li className="mb-1 text-sm">
-            <Link href="/faq">Questions</Link>
+            <Link
+              href="/faq"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Questions
+            </Link>
           </li>
           <li className="mb-1 text-sm">
-            <Link href="/faq">Contact</Link>
+            <Link
+              href="/faq"
+              className="transition duration-300 hover:text-primary-orange"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
 
       <div className="w-full py-4 flex-between">
-        <span>
+        <Link href="/">
           <h2 className="font-semibold">Obinox Creative</h2>
           <h6 className="text-xs">UI/UX Designer</h6>
-        </span>
+        </Link>
         <span className="text-xs text-gray-600 font-extralight">
           Copyright@obinox.co
         </span>

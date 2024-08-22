@@ -1,4 +1,4 @@
-import { SERVICE, tabsData } from "@/utils/constant";
+import { SERVICE } from "@/utils/constant";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -13,15 +13,13 @@ export function Tabs({ first, setFirst }) {
           return (
             <button
               key={idx}
-              style={{ background: color }}
-              className={`border flex-1 py-6 px-16 ${
-                idx === 0 && "rounded-tl-md"
-              } ${
+              style={{
+                background: idx !== activeTabIndex || first ? color : "black",
+              }}
+              className={`flex-1 py-6 px-16 ${idx === 0 && "rounded-tl-md"} ${
                 idx === 2 && "rounded-tr-md"
               } transition-colors duration-300 text-white ${
-                idx === activeTabIndex
-                  ? "bg-black"
-                  : "border-transparent hover:border-gray-200"
+                idx === activeTabIndex ? "bg-black" : " hover:border-gray-200"
               }`}
               // Change the active tab on click.
               onClick={() => {

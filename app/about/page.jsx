@@ -33,7 +33,7 @@ const About = () => {
             more.
           </p>
           <div className="flex flex-col w-full gap-4 text-white md:flex-row md:w-fit">
-            <button className="px-12 bg-[rgba(40,103,178,1)] rounded-md flex-center py-4 w-full gap-1 ">
+            <button className="px-12 hover:bg-[#578fd4] bg-[rgba(40,103,178,1)] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 ">
               <Image
                 src="/assets/images/linkedin.png"
                 alt="Linkedin"
@@ -42,7 +42,7 @@ const About = () => {
               />
               LinkedIn
             </button>
-            <button className="px-12 bg-[rgba(30,109,255,1)] rounded-md flex-center py-4 w-full gap-1 ">
+            <button className="px-12 bg-[rgba(30,109,255,1)] hover:bg-[#6390e5] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 ">
               <Image
                 src="/assets/images/behance.png"
                 alt="Linkedin"

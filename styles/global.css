@@ -8,6 +8,10 @@
   Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -91,7 +95,7 @@
 } */
 
 .btn-orange-gradient {
-  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg;
+  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-white hover:to-white duration-300 hover:text-primary-orange hover:border-primary-orange;
 }
 
 .green_gradient {
