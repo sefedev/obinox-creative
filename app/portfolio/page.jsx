@@ -16,7 +16,7 @@ const Portfolio = () => {
         </div>
         <div className="relative">
           <Image
-            src="/assets/images/animation.webp"
+            src="/assets/images/animation.gif"
             alt="laptop-man"
             className="relative z-50 transform -scale-x-100"
             width={400}
