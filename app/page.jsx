@@ -109,7 +109,7 @@ const Home = () => {
             <div className="absolute left-0 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
             <div className="absolute right-0 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
           </div>
-          <div class="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-wrap justify-center gap-6">
             {TESTIMONY.map(({ name, width }) => (
               <Image
                 src={`/assets/images${isDark ? "" : "/light"}/${name}.png`}

@@ -33,7 +33,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
           isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="p-4 text-left bg-gray-100">{answer}</p>
+        <p className="p-4 text-left bg-gray-100 dark:bg-gray-800">{answer}</p>
       </div>
     </div>
   );
