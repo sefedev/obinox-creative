@@ -4,41 +4,63 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+  // const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus("Sending...");
+
+  //   try {
+  //     const response = await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (response.ok) {
+  //       setStatus("Message sent successfully!");
+  //       setFormData({ name: "", email: "", message: "" });
+  //     } else {
+  //       setStatus("Failed to send message.");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     setStatus("Failed to send message.");
+  //   }
+  // };
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send message.");
-      }
-    } catch (error) {
-      console.error(error);
-      setStatus("Failed to send message.");
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "a4fb2429-6347-408b-8b34-726c1d82fe6c",
+        name: e.target.name.value,
+        email: e.target.email.value,
+        message: e.target.message.value,
+      }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      console.log(result);
     }
-  };
+  }
+
   return (
     <section
       id="#contact"
@@ -66,8 +88,8 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
+              // value={formData.name}
+              // onChange={handleChange}
               placeholder="Name"
               className="p-4 rounded-md"
               required
@@ -75,8 +97,8 @@ const Contact = () => {
             <input
               type="text"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              // value={formData.email}
+              // onChange={handleChange}
               placeholder="Email"
               className="p-4 rounded-md"
               required
@@ -86,8 +108,8 @@ const Contact = () => {
               cols="50"
               placeholder="Message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
+              // value={formData.message}
+              // onChange={handleChange}
               className="p-4 rounded-md"
               id="myTextarea"
               required
@@ -101,7 +123,7 @@ const Contact = () => {
               </button>
             </div>
           </div>
-          {status && <p>{status}</p>}
+          {/* {status && <p>{status}</p>} */}
         </form>
       </div>
     </section>
