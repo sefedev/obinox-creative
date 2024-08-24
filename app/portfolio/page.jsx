@@ -33,7 +33,7 @@ const Portfolio = () => {
       </section>
 
       {/* PORTFOLIO SECTION */}
-      <section className="flex flex-col w-full gap-16 p-6 my-20 bg-gray-200 md:p-16">
+      <section className="flex flex-col w-full gap-16 p-6 my-20 bg-gray-200 dark:bg-[rgba(53,53,53,1)] rounded-md md:p-16">
         {[
           "I-Varse",
           "entryX Mobile App",
@@ -43,7 +43,7 @@ const Portfolio = () => {
           "3D Product Modeling & Animation",
         ].map((portfolio, id) => (
           <div key={id} className="flex flex-col gap-4">
-            <div className="w-full h-[20rem] bg-gray-50 rounded-md"></div>
+            <div className="w-full h-[20rem] bg-gray-50 dark:bg-black rounded-md"></div>
             <div className="flex flex-col gap-4 md:items-center md:flex-row md:justify-between">
               <span className="md:text-left">
                 <h3 className="text-2xl font-semibold">{portfolio}</h3>
