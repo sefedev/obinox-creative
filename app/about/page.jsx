@@ -1,8 +1,12 @@
+"use client";
+
+import { ThemeContext } from "@/context/themes";
 import { ABOUT_SERVICE, WORK_FLOW } from "@/utils/constant";
 import Image from "next/image";
-import React from "react";
+import React, { useContext } from "react";
 
 const About = () => {
+  const { isDark } = useContext(ThemeContext);
   const render_services = (services) => (
     <ul className="list-disc">
       {services.map((service, id) => (
@@ -86,14 +90,14 @@ const About = () => {
       <section className="w-screen py-16">
         <h1 className="mb-4 section_head">SKILL AND PROFICIENCY</h1>
         <h2 className="section_subhead">Special Workflow</h2>
-        <div className="flex flex-wrap items-start justify-around flex-grow w-full gap-12 px-4 py-20 mt-6 bg-gray-100 md:flex md:px-36">
+        <div className="flex flex-wrap items-start justify-around flex-grow w-full gap-12 px-4 py-20 mt-6 dark:bg-[rgba(16,16,16,1)] bg-gray-100 md:flex md:px-36">
           {WORK_FLOW.map(({ title, img }, id) => (
             <div key={id} className="flex flex-col gap-4 flex-center">
               <div
                 className={`size-[5rem] grid place-items-center border border-black rounded-full`}
               >
                 <Image
-                  src={`/assets/images/${img}.svg`}
+                  src={`/assets/images/${isDark ? "" : "light/"}${img}.svg`}
                   alt={title}
                   width={35}
                   height={35}

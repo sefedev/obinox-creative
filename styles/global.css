@@ -108,7 +108,7 @@ html {
 } */
 
 .btn-orange-gradient {
-  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-white hover:to-white duration-300 hover:text-primary-orange hover:border-primary-orange;
+  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-inherit hover:to-inherit duration-300 hover:text-primary-orange hover:border-primary-orange;
 }
 
 .green_gradient {

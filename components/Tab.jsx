@@ -1,9 +1,11 @@
+import { ThemeContext } from "@/context/themes";
 import { SERVICE } from "@/utils/constant";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export function Tabs({ first, setFirst }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const { isDark } = useContext(ThemeContext);
 
   return (
     <div className="hidden md:block">
@@ -14,7 +16,12 @@ export function Tabs({ first, setFirst }) {
             <button
               key={idx}
               style={{
-                background: idx !== activeTabIndex || first ? color : "black",
+                background:
+                  isDark && idx === activeTabIndex
+                    ? "rgba(16,16,16,1)"
+                    : idx !== activeTabIndex || first
+                    ? color
+                    : "black",
               }}
               className={`flex-1 py-6 px-16 ${idx === 0 && "rounded-tl-md"} ${
                 idx === 2 && "rounded-tr-md"
@@ -36,7 +43,7 @@ export function Tabs({ first, setFirst }) {
       <div
         className={`flex flex-col ${
           first ? "justify-center" : "justify-start"
-        } h-[14rem] px-16 py-4 w-full text-white bg-black text-wrap rounded-b-md`}
+        } h-[14rem] px-16 py-4 w-full text-white bg-black dark:bg-[rgba(16,16,16,1)] text-wrap rounded-b-md`}
       >
         {first ? (
           <div className="grid gap-2 place-items-center">

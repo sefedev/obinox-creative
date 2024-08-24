@@ -10,11 +10,11 @@ const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
 
   return (
-    <nav className="flex p-4 mb-12 text-sm flex-between md:px-20">
+    <nav className="flex p-4 mb-12 text-sm dark:bg-black dark:text-white flex-between md:px-20">
       {/* LOGO AREA */}
       <Link href="/">
         <div className="flex gap-2 max-w-fit flex-center">
-          <span className="size-[2.5rem] p-0.5 grid place-items-center rounded-full border-2 border-black">
+          <span className="size-[2.5rem] p-0.5 grid place-items-center rounded-full border-2 dark:border-white border-black">
             <Image
               src="/assets/images/obinox-logo.png"
               alt="Obinox Creative"
@@ -82,14 +82,26 @@ const Navbar = () => {
           console.log(openNav);
         }}
       >
-        <Image src="/assets/icons/menu.svg" alt="menu" width={30} height={30} />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+          className={`${isDark ? "fill-white" : "fill-black"}`}
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
       </button>
 
       {/* MOBILE NAVIGATION */}
       <div
         className={`${
           openNav ? "block" : "hidden"
-        } fixed flex inset-0 h-screen w-full  z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1  flex-col py-36 items-center`}
+        } fixed flex inset-0 h-screen w-full  z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1 flex-col py-36 items-center`}
       >
         <div className="flex-between w-[70%] mb-8">
           <button className="max-w-fit" onClick={() => setOpenNav(false)}>

@@ -8,6 +8,7 @@ const ThemeProvider = ({ children }) => {
 
   const toggleDarkMode = () => {
     setIsDark((prev) => !prev);
+    document.body.classList.toggle("dark");
   };
 
   return (

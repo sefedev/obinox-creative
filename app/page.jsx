@@ -1,13 +1,15 @@
 "use client";
 
 import { Tabs } from "@/components/Tab";
+import { ThemeContext } from "@/context/themes";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 const Home = () => {
   const [first, setFirst] = useState(true);
+  const { isDark } = useContext(ThemeContext);
   return (
     <>
       {/* BACKDROP */}
@@ -29,14 +31,14 @@ const Home = () => {
       </>
 
       {/* HERO SECTION */}
-      <section className="relative flex flex-col items-center my-6 gap-y-8">
+      <section className="relative flex flex-col items-center my-6 gap-y-8 dark:text-white dark:bg-black">
         {/* <h1 className="text-[42px] leading-10 font-semibold md:text-7xl mb-4">
           Limitless
           <br /> Digital Designs
         </h1> */}
 
         <Image
-          src="/assets/images/hero-main.png"
+          src={`/assets/images${isDark ? "/light" : ""}/hero-main.png`}
           alt="limitless digital deisgns"
           width={400}
           height={400}
@@ -88,7 +90,7 @@ const Home = () => {
         <Link
           href="/faq#contact"
           passHref
-          className="text-white border btn-orange-gradient "
+          className="text-white border dark:border-black btn-orange-gradient "
         >
           Make your ideas come alive
         </Link>
@@ -99,14 +101,18 @@ const Home = () => {
         <h2 className="tracking-[0.2rem] font-light">WE HAVE WORKED WITH</h2>
         <div className="relative flex flex-wrap my-6 md:overflow-hidden gap-x-10">
           {/* FADED EDGES */}
-          <div className="absolute inset-x-0 top-0 h-full pointer-events-none">
+          <div
+            className={`absolute inset-x-0 top-0 h-full pointer-events-none ${
+              isDark && "hidden"
+            }`}
+          >
             <div className="absolute left-0 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
             <div className="absolute right-0 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
           </div>
           <div class="flex flex-wrap gap-6 justify-center">
             {TESTIMONY.map(({ name, width }) => (
               <Image
-                src={`/assets/images/light/${name}.png`}
+                src={`/assets/images${isDark ? "" : "/light"}/${name}.png`}
                 alt={name}
                 key={name}
                 width={120}
@@ -261,7 +267,7 @@ const Home = () => {
               <div className={`p-6 rounded-t-lg`} style={{ background: color }}>
                 {title}
               </div>
-              <div className="px-4 py-6 text-sm bg-gray-950 h-[18rem] grid place-items-center">
+              <div className="px-4 py-6 text-sm bg-gray-950 dark:bg-gray-900 h-[18rem] grid place-items-center">
                 {desc}
               </div>
             </div>

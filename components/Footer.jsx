@@ -107,7 +107,7 @@ const Footer = () => {
           <h2 className="font-semibold">Obinox Creative</h2>
           <h6 className="text-xs">UI/UX Designer</h6>
         </Link>
-        <span className="text-xs text-gray-600 font-extralight">
+        <span className="text-xs text-gray-600 dark:text-gray-400 font-extralight">
           Copyright@obinox.co
         </span>
       </div>
