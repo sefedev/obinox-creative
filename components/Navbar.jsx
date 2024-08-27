@@ -3,15 +3,13 @@
 import { ThemeContext } from "@/context/themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
   const { isDark, toggleDarkMode } = useContext(ThemeContext);
   const [openNav, setOpenNav] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
-
-  const { asPath } = useRouter();
 
   // GRADIENT COLOR CHANGE
   useEffect(() => {
@@ -34,6 +32,8 @@ const Navbar = () => {
     { title: "Portfolio", link: "/portfolio" },
     { title: "Faq", link: "/faq" },
   ];
+
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 left-0 z-50 flex w-full p-4 mb-12 text-sm glassmorphism dark:bg-black dark:text-white flex-between md:px-20">
@@ -62,14 +62,16 @@ const Navbar = () => {
       <div className="items-center justify-between hidden gap-12 md:flex max-w-fit">
         <ul className="flex gap-8">
           {nav_link.map(({ title, link }, id) => {
-            const isActive = asPath === link;
             return (
               <li key={id}>
                 <Link
                   href={link}
+                  // className={`${
+                  //   isActive ? "text-primary-orange" : "text-blue-500"
+                  // } transition-none duration-500 hover:text-primary-orange`}
                   className={`${
-                    isActive ? "text-primary-orange" : "text-blue-500"
-                  } transition-none duration-500 hover:text-primary-orange`}
+                    pathname === link && "text-primary-orange font-semibold"
+                  }`}
                 >
                   {title}
                 </Link>
