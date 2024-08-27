@@ -148,7 +148,7 @@ const Contact = () => {
             <div className="justify-end mt-4 md:flex">
               <button
                 type="submit"
-                className={`w-full flex-center gap-2 px-12 border py-4 transition-all duration-300 rounded-md md:w-fit hover:bg-inherit hover:text-white ${
+                className={`w-full flex-center gap-2 px-12 py-4 transition-all duration-300 rounded-md md:w-fit hover:bg-primary-orange hover:text-white ${
                   loading ? "bg-white/50" : "bg-white"
                 }`}
                 disabled={loading}

@@ -37,7 +37,7 @@ const FaqList = () => {
         ))}
       <div className="gap-4 flex-center">
         <button
-          className="bg-[rgba(255,116,0,1)] text-lg text-white font-semibold px-2.5 py-0.5 rounded-full"
+          className="bg-[rgba(255,116,0,1)] hover:bg-orange-400 transition-all duration-300 text-lg text-white font-semibold px-2.5 py-0.5 rounded-full"
           onClick={() => {
             setFirst(true);
             setSecond(false);
@@ -46,7 +46,7 @@ const FaqList = () => {
           {"<"}
         </button>
         <button
-          className="bg-[rgba(255,161,0,1)] text-lg text-white font-semibold px-2.5 py-0.5 rounded-full"
+          className="bg-[rgba(255,161,0,1)] hover:bg-orange-200 transition-all duration-300 text-lg text-white font-semibold px-2.5 py-0.5 rounded-full"
           onClick={() => {
             setFirst(false);
             setSecond(true);

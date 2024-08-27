@@ -1,15 +1,33 @@
 "use client";
 
+import GradientButton from "@/components/GradientButton";
 import { Tabs } from "@/components/Tab";
 import { ThemeContext } from "@/context/themes";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const Home = () => {
   const [first, setFirst] = useState(true);
   const { isDark } = useContext(ThemeContext);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % gradients.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const gradients = [
+    "bg-gradient-to-r from-green-500  to-green-800",
+    "bg-gradient-to-r dark:from-white dark:to-white from-black to-black",
+    "bg-gradient-to-r from-orange-500  to-orange-800",
+    "bg-gradient-to-r from-purple-500  to-purple-800",
+  ];
+
   return (
     <>
       {/* BACKDROP */}
@@ -32,18 +50,25 @@ const Home = () => {
 
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center my-6 gap-y-8 dark:text-white dark:bg-black">
-        {/* <h1 className="text-[42px] leading-10 font-semibold md:text-7xl mb-4">
-          Limitless
-          <br /> Digital Designs
-        </h1> */}
+        <div className="relative py-4 text-6xl font-semibold md:text-8xl">
+          {gradients.map((gradient, index) => (
+            <h1
+              key={index}
+              className={`absolute inset-0 bg-clip-text text-transparent ${gradient} transition-opacity duration-1000 ease-in-out ${
+                currentIndex === index ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ WebkitTextFillColor: "transparent" }}
+            >
+              Limitless
+              <br /> Digital Designs
+            </h1>
+          ))}
+          <span className="relative text-transparent">
+            Limitless
+            <br /> Digital Designs
+          </span>
+        </div>
 
-        <Image
-          src={`/assets/images${isDark ? "/light" : ""}/hero-main.png`}
-          alt="limitless digital deisgns"
-          width={400}
-          height={400}
-          className="md:w-[36rem] hover:cursor-pointer"
-        />
         <p className="max-w-lg">
           Design everything you need to take your business to the next level.
           Experience an exciting process, as we execute everything design
@@ -87,13 +112,14 @@ const Home = () => {
           </ul>
         </div>
 
-        <Link
+        {/* <Link
           href="/faq#contact"
           passHref
           className="text-white border dark:border-black btn-orange-gradient "
         >
           Make your ideas come alive
-        </Link>
+        </Link> */}
+        <GradientButton title="Make your ideas come alive" link="/faq" />
       </section>
 
       {/* TESTIMONIAL SECTION */}

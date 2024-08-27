@@ -14,7 +14,7 @@ const RootLayout = ({ children }) => {
   return (
     <ThemeProvider>
       <html lang="en">
-        <body className="font-poppins dark:bg-black dark:text-white">
+        <body className="transition-colors duration-200 font-poppins dark:bg-black dark:text-white">
           <Navbar />
           <main className="app">{children}</main>
           <Footer />

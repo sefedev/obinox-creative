@@ -3,29 +3,57 @@
 import { ThemeContext } from "@/context/themes";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
 
 const Navbar = () => {
   const { isDark, toggleDarkMode } = useContext(ThemeContext);
   const [openNav, setOpenNav] = useState(false);
+  const [colorIndex, setColorIndex] = useState(0);
+
+  const { asPath } = useRouter();
+
+  // GRADIENT COLOR CHANGE
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 2000); // Change color every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  const colors = [
+    "border-green-500",
+    "dark:border-white border-black",
+    "border-orange-500",
+    "border-purple-500",
+  ];
+
+  const nav_link = [
+    { title: "About", link: "/about" },
+    { title: "Portfolio", link: "/portfolio" },
+    { title: "Faq", link: "/faq" },
+  ];
 
   return (
-    <nav className="flex p-4 mb-12 text-sm dark:bg-black dark:text-white flex-between md:px-20">
+    <nav className="sticky top-0 left-0 z-50 flex w-full p-4 mb-12 text-sm glassmorphism dark:bg-black dark:text-white flex-between md:px-20">
       {/* LOGO AREA */}
       <Link href="/">
         <div className="flex gap-2 max-w-fit flex-center">
-          <span className="size-[2.5rem] p-0.5 grid place-items-center rounded-full border-2 dark:border-white border-black">
+          <span
+            className={`size-[4rem] p-0.5 grid place-items-center rounded-full border-2 transition-colors duration-500 ${colors[colorIndex]}`}
+          >
             <Image
               src="/assets/images/obinox-logo.png"
               alt="Obinox Creative"
-              width={50}
-              height={50}
+              width={70}
+              height={70}
               className="rounded-full"
             />
           </span>
           <span>
-            <h2 className="text-base font-semibold">Obinox Creative</h2>
-            <h6 className="text-xs">UI/UX Designer</h6>
+            <h2 className="text-lg font-semibold">Obinox Creative</h2>
+            <h6 className="text-sm">UI/UX Designer</h6>
           </span>
         </div>
       </Link>
@@ -33,30 +61,21 @@ const Navbar = () => {
       {/* LINKS */}
       <div className="items-center justify-between hidden gap-12 md:flex max-w-fit">
         <ul className="flex gap-8">
-          <li>
-            <Link
-              href="/about"
-              className="transition-none duration-500 hover:text-primary-orange"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/portfolio"
-              className="transition-none duration-500 hover:text-primary-orange"
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/faq"
-              className="transition-none duration-500 hover:text-primary-orange"
-            >
-              Faq
-            </Link>
-          </li>
+          {nav_link.map(({ title, link }, id) => {
+            const isActive = asPath === link;
+            return (
+              <li key={id}>
+                <Link
+                  href={link}
+                  className={`${
+                    isActive ? "text-primary-orange" : "text-blue-500"
+                  } transition-none duration-500 hover:text-primary-orange`}
+                >
+                  {title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <button
           className={`hidden max-w-fit p-1 rounded-md bg-black md:block ${
@@ -115,7 +134,10 @@ const Navbar = () => {
             className={`max-w-fit p-1 rounded-md bg-black md:block ${
               isDark && "bg-primary-orange"
             }`}
-            onClick={toggleDarkMode}
+            onClick={() => {
+              toggleDarkMode();
+              setOpenNav(false);
+            }}
           >
             <Image
               src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}

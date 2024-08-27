@@ -3,6 +3,7 @@
 import { ThemeContext } from "@/context/themes";
 import { ABOUT_SERVICE, WORK_FLOW } from "@/utils/constant";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useContext } from "react";
 
 const About = () => {
@@ -37,7 +38,10 @@ const About = () => {
             more.
           </p>
           <div className="flex flex-col w-full gap-4 text-white md:flex-row md:w-fit">
-            <button className="px-12 hover:bg-[#578fd4] bg-[rgba(40,103,178,1)] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 ">
+            <Link
+              href="/"
+              className="px-12 hover:bg-[#578fd4] bg-[rgba(40,103,178,1)] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 "
+            >
               <Image
                 src="/assets/images/linkedin.png"
                 alt="Linkedin"
@@ -45,8 +49,11 @@ const About = () => {
                 height={20}
               />
               LinkedIn
-            </button>
-            <button className="px-12 bg-[rgba(30,109,255,1)] hover:bg-[#6390e5] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 ">
+            </Link>
+            <Link
+              href="/"
+              className="px-12 bg-[rgba(30,109,255,1)] hover:bg-[#6390e5] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 "
+            >
               <Image
                 src="/assets/images/behance.png"
                 alt="Linkedin"
@@ -54,7 +61,7 @@ const About = () => {
                 height={20}
               />
               Behance
-            </button>
+            </Link>
           </div>
         </div>
         <Image
@@ -68,7 +75,7 @@ const About = () => {
       {/* SERVICE SECTION */}
       <section className="py-16">
         <h2 className="mb-8 section_subhead">Services Include</h2>
-        <div className="flex flex-col gap-16 md:flex-row">
+        <div className="flex flex-col gap-6 md:flex-row">
           {ABOUT_SERVICE.map(({ title, services }, id) => (
             <div
               key={id}
@@ -77,7 +84,7 @@ const About = () => {
               } 
               ${id === 1 && "from-[rgba(255,154,0,1)] to-[rgba(255,116,0,1)]"}
               ${id === 2 && "from-[rgba(255,156,0,1)] to-[rgba(255,51,0,1)]"}
-              py-6 px-10 rounded-tl-2xl rounded-br-2xl text-white text-left flex-1 h-[24rem]`}
+              py-6 px-10 rounded-tl-2xl rounded-br-2xl text-white text-left flex-1 min-h-[21rem] border-2 border-transparent hover:border-gray-300 transform hover:scale-[1.03] transition-all duration-300 dark:hover:border-gray-200 cursor-pointer`}
             >
               <h3 className="mb-4 text-xl font-semibold">{title}</h3>
               {render_services(services)}
@@ -94,12 +101,20 @@ const About = () => {
           {WORK_FLOW.map(({ title, img }, id) => (
             <div key={id} className="flex flex-col gap-4 flex-center">
               <div
-                className={`size-[5rem] grid place-items-center border border-black rounded-full`}
+                className={`relative size-[5rem] grid place-items-center border border-black dark:border-white rounded-full`}
               >
                 <Image
                   src={`/assets/images/${isDark ? "" : "light/"}${img}.svg`}
+                  className="absolute inset-auto transition-opacity duration-300 ease-in-out cursor-pointer hover:opacity-0"
                   alt={title}
-                  width={35}
+                  width={id === 0 ? 25 : 35}
+                  height={35}
+                />
+                <Image
+                  src={`/assets/images/colored/${img}.svg`}
+                  className="absolute inset-auto transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100"
+                  alt={title}
+                  width={id === 0 ? 30 : 40}
                   height={35}
                 />
               </div>
@@ -120,10 +135,13 @@ const About = () => {
 
       {/* CHECK DESIGN SECTION */}
       <section className="pb-8">
-        <p className="mb-4 text-sm">Check out some of our designs</p>
-        <button className="p-6 text-sm text-white transition duration-300 bg-gray-900 border border-gray-900 rounded-lg hover:text-black hover:bg-white">
+        <p className="mb-10 text-sm">Check out some of our designs</p>
+        <Link
+          href="/portfolio"
+          className="p-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
+        >
           Click to see designs
-        </button>
+        </Link>
       </section>
     </>
   );

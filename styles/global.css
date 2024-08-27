@@ -103,13 +103,45 @@ html {
   @apply mb-8 text-4xl font-semibold;
 }
 
-/* .orange_gradient {
-  @apply text-transparent bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text;
+.btn-orange-gradient {
+  @apply transition-all duration-500 bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 hover:from-green-500 hover:to-green-800;
+}
+
+.btn-link {
+  background: linear-gradient(
+    to right,
+    #3b82f6,
+    #10b981
+  ); /* Initial gradient */
+  background-size: 200% 100%; /* Double the size of the gradient */
+  transition: background-position 0.5s ease-in-out; /* Smooth transition */
+}
+
+.btn-link:hover {
+  background-position: 100% 0; /* Shift the gradient on hover */
+}
+
+.btn-link {
+  background: linear-gradient(
+    to right,
+    #3b82f6,
+    #10b981
+  ); /* Initial gradient */
+  background-size: 200% 100%; /* Double the size of the gradient */
+  transition: background-position 0.5s ease-in-out; /* Smooth transition */
+}
+
+.btn-link:hover {
+  background-position: 100% 0; /* Shift the gradient on hover */
+}
+
+/* .btn-orange-gradient {
+  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-green-500 hover:to-green-800 duration-300;
 } */
 
-.btn-orange-gradient {
-  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-inherit hover:to-inherit duration-300 hover:text-primary-orange hover:border-primary-orange;
-}
+/* .btn-orange-gradient {
+  @apply px-8 py-4 transition-all duration-500 bg-orange-500 hover:bg-green-500;
+} */
 
 .green_gradient {
   @apply text-transparent bg-gradient-to-r from-green-400 to-green-500 bg-clip-text;
@@ -128,7 +160,7 @@ html {
 } */
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply p-5 rounded-xl dark:bg-black/20 bg-white/80 dark:shadow-none backdrop-blur;
 }
 
 .backdrop1 {

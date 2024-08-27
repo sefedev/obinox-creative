@@ -24,7 +24,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
             d="M19 9l-7 7-7-7"
           />
         </svg> */}
-        <span className="px-[0.5rem] grid place-items-center font-bold text-2xl text-white bg-[rgba(255,51,0,1)] rounded-full">
+        <span className="px-[0.5rem] grid place-items-center font-bold text-2xl text-white bg-[rgba(255,51,0,1)] hover:bg-orange-400 transition-all duration-200 rounded-full">
           {isOpen ? "-" : "+"}
         </span>
       </button>

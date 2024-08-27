@@ -1,4 +1,5 @@
 import Contact from "@/components/Contact";
+import GradientButton from "@/components/GradientButton";
 import Image from "next/image";
 import React from "react";
 
@@ -49,9 +50,10 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-semibold">{portfolio}</h3>
                 <p>Visit to view case study</p>
               </span>
-              <button className="px-8 py-4 text-white transition-all duration-300 rounded-md bg-gradient-to-r bg-primary-orange hover:bg-primary-orange/60">
+              {/* <button className="px-8 py-4 text-white transition-all duration-300 rounded-md bg-gradient-to-r bg-primary-orange hover:bg-primary-orange/60">
                 Click to open
-              </button>
+              </button> */}
+              <GradientButton title="Click to open" link="/" />
             </div>
           </div>
         ))}
