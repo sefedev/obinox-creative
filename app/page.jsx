@@ -182,7 +182,7 @@ const Home = () => {
               {[...TESTIMONY, ...TESTIMONY].map(({ name, width }, id) => (
                 <div key={id} className="flex-shrink-0 mx-4">
                   <Image
-                    src={`/assets/images${isDark ? "" : "/light"}/${name}.png`}
+                    src={`/assets/images/${isDark ? "" : "light"}/${name}.png`}
                     alt={name}
                     width={120}
                     height={10}
