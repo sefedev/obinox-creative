@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 export function Tabs({ first, setFirst }) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const { isDark } = useContext(ThemeContext);
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div className="hidden md:block">
@@ -29,9 +30,18 @@ export function Tabs({ first, setFirst }) {
                 idx === activeTabIndex ? "bg-black" : " hover:border-gray-200"
               }`}
               // Change the active tab on click.
-              onClick={() => {
+              // onClick={() => {
+              //    setHovered(true);
+              //   setActiveTabIndex(idx);
+              //   setFirst(false);
+              // }}
+              onMouseEnter={() => {
                 setActiveTabIndex(idx);
                 setFirst(false);
+              }}
+              onMouseLeave={() => {
+                setHovered(false);
+                setFirst(true);
               }}
             >
               {title}
@@ -45,7 +55,7 @@ export function Tabs({ first, setFirst }) {
           first ? "justify-center" : "justify-start"
         } h-[14rem] px-16 py-4 w-full text-white bg-black dark:bg-[rgba(16,16,16,1)] text-wrap rounded-b-md`}
       >
-        {first ? (
+        {first && hovered ? (
           <div className="grid gap-2 place-items-center">
             <Image
               src="/assets/icons/setting-light.svg"
