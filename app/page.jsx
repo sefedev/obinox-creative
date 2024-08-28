@@ -6,6 +6,7 @@ import { Tabs } from "@/components/Tab";
 import { ThemeContext } from "@/context/themes";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useContext, useEffect, useState, useRef } from "react";
 
@@ -61,20 +62,24 @@ const Home = () => {
     <>
       {/* BACKDROP */}
       <>
-        <Image
-          src="/assets/images/backdrop-left.svg"
-          alt="backdrop-left"
-          className="absolute top-0 hidden -z-50 -left-10 md:block"
-          width={300}
-          height={300}
-        />
-        <Image
-          src="/assets/images/backdrop-right.svg"
-          alt="backdrop-right"
-          className="absolute top-0 hidden -z-50 -right-10 md:block"
-          width={300}
-          height={300}
-        />
+        <ScrollEffect>
+          <Image
+            src="/assets/images/backdrop-left.svg"
+            alt="backdrop-left"
+            className="absolute top-0 hidden -z-50 -left-10 md:block"
+            width={300}
+            height={300}
+          />
+        </ScrollEffect>
+        <ScrollEffect>
+          <Image
+            src="/assets/images/backdrop-right.svg"
+            alt="backdrop-right"
+            className="absolute top-0 hidden -z-50 -right-10 md:block"
+            width={300}
+            height={300}
+          />
+        </ScrollEffect>
       </>
 
       {/* HERO SECTION */}
@@ -161,33 +166,46 @@ const Home = () => {
               isDark && "hidden"
             }`}
           >
-            <div className="absolute left-0 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
-            <div className="absolute right-0 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
+            <div className="absolute left-0 z-50 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
+            <div className="absolute right-0 z-50 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
           </div>
-          <div className="flex flex-wrap justify-center gap-6">
-            {TESTIMONY.map(({ name, width }) => (
-              <Image
-                src={`/assets/images${isDark ? "" : "/light"}/${name}.png`}
-                alt={name}
-                key={name}
-                width={120}
-                height={10}
-                className="h-[2.5rem]"
-              />
-            ))}
+          <div className="w-[48rem] gap-6 overflow-hidden">
+            <motion.div
+              className="flex w-[80%]"
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{
+                repeat: Infinity,
+                duration: 10,
+                ease: "linear",
+              }}
+            >
+              {[...TESTIMONY, ...TESTIMONY].map(({ name, width }, id) => (
+                <div key={id} className="flex-shrink-0 mx-4">
+                  <Image
+                    src={`/assets/images${isDark ? "" : "/light"}/${name}.png`}
+                    alt={name}
+                    width={120}
+                    height={10}
+                    className={`h-[2.5rem]`}
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* BACKDROP FOR MOBILE ONLY */}
       <div className="relative w-full h-40 mb-24 md:hidden -inset-x-6">
-        <Image
-          src="/assets/images/backdrop-mobile.png"
-          alt="backdrop-left"
-          className="absolute w-[22rem] top-0 h-[14rem] block md:hidden"
-          width={250}
-          height={250}
-        />
+        <ScrollEffect>
+          <Image
+            src="/assets/images/backdrop-mobile.png"
+            alt="backdrop-left"
+            className="absolute w-[22rem] top-0 h-[14rem] block md:hidden"
+            width={250}
+            height={250}
+          />
+        </ScrollEffect>
       </div>
 
       {/* PROCESS SECTION */}
