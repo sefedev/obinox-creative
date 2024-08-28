@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "framer-motion": "^11.3.30",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.2",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
     "nodemailer": "^6.9.14",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.13.0"
   },
   "devDependencies": {
     "postcss": "^8",

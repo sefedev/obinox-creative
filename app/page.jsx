@@ -1,12 +1,13 @@
 "use client";
 
 import GradientButton from "@/components/GradientButton";
+import ScrollEffect from "@/components/ScrollEffect";
 import { Tabs } from "@/components/Tab";
 import { ThemeContext } from "@/context/themes";
 import { PROCESS, SERVICE, TESTIMONY } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 
 const Home = () => {
   const [first, setFirst] = useState(true);
@@ -27,6 +28,34 @@ const Home = () => {
     "bg-gradient-to-r from-orange-500  to-orange-800",
     "bg-gradient-to-r from-purple-500  to-purple-800",
   ];
+
+  // ANIMATE ON SCROLL
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          } else {
+            entry.target.classList.remove("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -167,116 +196,128 @@ const Home = () => {
         <h1 className="section_subhead">Design with ease</h1>
 
         {/* For desktop */}
-        <div className=" flex-col gap-4 hidden min-w-[876px] text-left md:flex">
-          <span className="flex items-center justify-between">
-            <Image
-              src="/assets/images/pro_card_1.svg"
-              alt="Card 1"
-              width={350}
-              height={150}
-            />
-            <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-              1
-            </span>
-            <div className="">
-              <h3 className="mb-2 text-lg font-semibold">Ideas and Research</h3>
-              <p className="max-w-xs text-sm ">
-                Ideas and solutions for the design problems, I study target
-                users' needs, behaviors, and pain points through interviews,
-                surveys, and observations.
-              </p>
+        <div className=" flex-col gap-8 hidden min-w-[968px] text-left md:flex">
+          <ScrollEffect>
+            <div className="flex items-center justify-between">
+              <Image
+                src="/assets/images/pro_card_1.svg"
+                alt="Card 1"
+                width={350}
+                height={150}
+              />
+              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                1
+              </span>
+              <div className="w-[22rem]">
+                <h3 className="mb-2 text-lg font-semibold">
+                  Ideas and Research
+                </h3>
+                <p className="max-w-xs text-sm ">
+                  Ideas and solutions for the design problems, I study target
+                  users' needs, behaviors, and pain points through interviews,
+                  surveys, and observations.
+                </p>
+              </div>
             </div>
-          </span>
+          </ScrollEffect>
 
-          <span className="flex items-center justify-between">
-            <div className="">
-              <h3 className="mb-2 text-lg font-semibold">
-                Structure and design
-              </h3>
-              <p className="max-w-xs text-sm ">
-                Create quick sketches or wireframes to visualize initial
-                concepts, I create interactive prototypes that simulate user
-                interactions and workflows.
-              </p>
+          <ScrollEffect>
+            <div className="flex items-center justify-between">
+              <div className=" w-[22rem]">
+                <h3 className="mb-2 text-lg font-semibold">
+                  Structure and design
+                </h3>
+                <p className="max-w-xs text-sm ">
+                  Create quick sketches or wireframes to visualize initial
+                  concepts, I create interactive prototypes that simulate user
+                  interactions and workflows.
+                </p>
+              </div>
+              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                2
+              </span>
+              <Image
+                src="/assets/images/pro_card_2.svg"
+                alt="Card 1"
+                width={350}
+                height={150}
+              />
             </div>
-            <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-              2
-            </span>
-            <Image
-              src="/assets/images/pro_card_2.svg"
-              alt="Card 1"
-              width={350}
-              height={150}
-            />
-          </span>
+          </ScrollEffect>
 
-          <span className="flex items-center justify-between">
-            <Image
-              src="/assets/images/pro_card_3.svg"
-              alt="Card 1"
-              width={350}
-              height={150}
-            />
-            <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-              3
-            </span>
-            <div className="">
-              <h3 className="mb-2 text-lg font-semibold">
-                Testing and Implementing
-              </h3>
-              <p className="max-w-xs text-sm ">
-                Conduct tests with real users to identify issues and gather
-                feedback and work closely with development teams to ensure the
-                design is implemented accurately.
-              </p>
+          <ScrollEffect>
+            <div className="flex items-center justify-between">
+              <Image
+                src="/assets/images/pro_card_3.svg"
+                alt="Card 1"
+                width={350}
+                height={150}
+              />
+              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                3
+              </span>
+              <div className="w-[22rem]">
+                <h3 className="mb-2 text-lg font-semibold">
+                  Testing and Implementing
+                </h3>
+                <p className="max-w-xs text-sm ">
+                  Conduct tests with real users to identify issues and gather
+                  feedback and work closely with development teams to ensure the
+                  design is implemented accurately.
+                </p>
+              </div>
             </div>
-          </span>
+          </ScrollEffect>
 
-          <span className="flex items-center justify-between">
-            <div className="">
-              <h3 className="mb-2 text-lg font-semibold">
-                Launch and Documentation
-              </h3>
-              <p className="max-w-xs text-sm">
-                Release the product to users, ensuring all elements are
-                functioning as intended and Keep detailed records of the design
-                process, decisions, and changes.
-              </p>
+          <ScrollEffect>
+            <div className="flex items-center justify-between">
+              <div className="w-[22rem]">
+                <h3 className="mb-2 text-lg font-semibold">
+                  Launch and Documentation
+                </h3>
+                <p className="max-w-xs text-sm">
+                  Release the product to users, ensuring all elements are
+                  functioning as intended and Keep detailed records of the
+                  design process, decisions, and changes.
+                </p>
+              </div>
+              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                4
+              </span>
+              <Image
+                src="/assets/images/pro_card_4.svg"
+                alt="Card 1"
+                width={350}
+                height={150}
+              />
             </div>
-            <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-              4
-            </span>
-            <Image
-              src="/assets/images/pro_card_4.svg"
-              alt="Card 1"
-              width={350}
-              height={150}
-            />
-          </span>
+          </ScrollEffect>
         </div>
 
         {/* For mobile */}
         <div className="flex flex-col gap-8 md:hidden">
           {PROCESS.map(({ number, title, desc }) => (
-            <span
-              key={number}
-              className="flex flex-col items-center justify-between gap-6"
-            >
-              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                {number}
-              </span>
-              <Image
-                src={`/assets/images/pro_card_${number}.svg`}
-                alt="Card 1"
-                width={350}
-                height={150}
-              />
+            <ScrollEffect>
+              <span
+                key={number}
+                className="flex flex-col items-center justify-between gap-6"
+              >
+                <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
+                  {number}
+                </span>
+                <Image
+                  src={`/assets/images/pro_card_${number}.svg`}
+                  alt="Card 1"
+                  width={350}
+                  height={150}
+                />
 
-              <div className="">
-                <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-                <p className="max-w-xs text-sm ">{desc}</p>
-              </div>
-            </span>
+                <div className="">
+                  <h3 className="mb-2 text-lg font-semibold">{title}</h3>
+                  <p className="max-w-xs text-sm ">{desc}</p>
+                </div>
+              </span>
+            </ScrollEffect>
           ))}
         </div>
       </section>
