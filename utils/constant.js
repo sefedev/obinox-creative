@@ -44,27 +44,27 @@ export const FAQ = [
 
 export const TESTIMONY = [
   {
-    name: "Atop",
+    name: "atop",
     width: 111,
   },
   {
-    name: "Cardic",
+    name: "cardic",
     width: 118,
   },
   {
-    name: "Carpe-diem",
+    name: "carpe-diem",
     width: 161,
   },
   {
-    name: "Cwito",
+    name: "cwito",
     width: 121,
   },
   {
-    name: "I-Varse",
+    name: "i-varse",
     width: 117,
   },
   {
-    name: "Owlya",
+    name: "owlya",
     width: 127,
   },
 ];
