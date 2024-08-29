@@ -186,6 +186,7 @@ const Home = () => {
                     alt={name}
                     width={120}
                     height={10}
+                    unoptimized={true}
                     className={`h-[2.5rem]`}
                   />
                 </div>
