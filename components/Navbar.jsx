@@ -88,8 +88,8 @@ const Navbar = () => {
           <Image
             src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
             alt="DarkMode"
-            width={16}
-            height={16}
+            width={10}
+            height={10}
           />
         </button>
       </div>
@@ -144,8 +144,8 @@ const Navbar = () => {
             <Image
               src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
               alt="darkMode"
-              width={24}
-              height={24}
+              width={16}
+              height={16}
             />
           </button>
         </div>
