@@ -169,7 +169,7 @@ const Home = () => {
             <div className="absolute left-0 z-50 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
             <div className="absolute right-0 z-50 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
           </div>
-          <div className="w-[48rem] gap-6 overflow-hidden">
+          <div className="md:w-[48rem] gap-6 overflow-hidden">
             <motion.div
               className="flex w-[80%]"
               animate={{ x: ["0%", "-100%"] }}
