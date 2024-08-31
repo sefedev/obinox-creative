@@ -370,15 +370,24 @@ const Home = () => {
             <></>
           ) : (
             <>
-              <Image
-                src="/assets/icons/setting-dark.svg"
-                alt="Settings"
-                width={40}
-                height={40}
-              />
-              <h3 className="mb-4">
-                Get the best services and enjoy a wonderful design experience
-              </h3>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <Image
+                    src="/assets/icons/setting-dark.svg"
+                    alt="Settings"
+                    width={40}
+                    height={40}
+                  />
+                  <h3 className="mb-4">
+                    Get the best services and enjoy a wonderful design
+                    experience
+                  </h3>
+                </div>
+              </motion.div>
             </>
           )}
         </>
