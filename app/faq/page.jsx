@@ -16,19 +16,13 @@ const Faq = () => {
 
           <div className="relative flex flex-col items-center justify-start flex-1">
             <Image
-              src="/assets/images/question.gif"
+              src="/assets/images/faq.png"
               alt="Question"
               width={250}
               height={250}
             />
-            <Image
-              src="/assets/images/vector-2.png"
-              className="absolute"
-              alt="vector"
-              width={300}
-              height={300}
-            />
-            <div className="">
+
+            <div className="mt-8">
               <h3 className="mb-2 text-xl font-semibold">Any Question?</h3>
               <p className="text-xs font-light">
                 We are here to answer any question you have for us
