@@ -63,7 +63,10 @@ const Navbar = () => {
         <ul className="flex gap-8">
           {nav_link.map(({ title, link }, id) => {
             return (
-              <li key={id}>
+              <li
+                key={id}
+                className="transition duration-300 hover:text-primary-orange"
+              >
                 <Link
                   href={link}
                   // className={`${

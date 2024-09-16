@@ -1,26 +1,23 @@
-"use client";
-
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/context/themes";
+import Main from "@/components/Main";
 import "@/styles/global.css";
+import Head from "next/head";
 
-// export const metadata = {
-//   title: "Obinox Creative",
-//   description: "Obnox Creative Studio",
-// };
+export const metadata = {
+  title: "Obinox Creative",
+  description: "Obnox Creative Studio",
+};
 
 const RootLayout = ({ children }) => {
   return (
-    <ThemeProvider>
-      <html lang="en">
-        <body className="transition-colors duration-200 font-poppins dark:bg-black dark:text-white">
-          <Navbar />
-          <main className="app">{children}</main>
-          <Footer />
-        </body>
-      </html>
-    </ThemeProvider>
+    <html lang="en">
+      <Head>
+        <link rel="icon" href="./favicon.ico" />
+        <meta name="description" content="This is a custom description" />
+      </Head>
+      <body className="transition-colors duration-200 font-poppins dark:bg-black dark:text-white">
+        <Main>{children}</Main>
+      </body>
+    </html>
   );
 };
 
