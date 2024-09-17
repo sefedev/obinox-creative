@@ -30,7 +30,7 @@ const Navbar = () => {
   const nav_link = [
     { title: "About", link: "/about" },
     { title: "Portfolio", link: "/portfolio" },
-    { title: "Faq", link: "/faq" },
+    { title: "Contact", link: "/contact" },
   ];
 
   const pathname = usePathname();
@@ -91,8 +91,8 @@ const Navbar = () => {
           <Image
             src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
             alt="DarkMode"
-            width={10}
-            height={10}
+            width={12}
+            height={12}
           />
         </button>
       </div>
@@ -183,8 +183,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/faq" onClick={() => setOpenNav(false)}>
-              Faq
+            <Link href="/contact" onClick={() => setOpenNav(false)}>
+              Contact
             </Link>
           </li>
         </ul>

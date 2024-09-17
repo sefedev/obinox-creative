@@ -1,13 +1,16 @@
-import Contact from "@/components/Contact";
+import ContactForm from "@/components/ContactForm";
 import FaqList from "@/components/FaqList";
 import Image from "next/image";
 import React from "react";
 
-const Faq = () => {
+const Contact = () => {
   return (
     <>
+      {/* CONTACT SECTION */}
+      <ContactForm />
+
       {/* FAQ SECTION */}
-      <section className="mb-24">
+      <section className="mt-24">
         <h2 className="mb-10 text-2xl font-semibold text-center">
           Frequently Asked Questions
         </h2>
@@ -31,11 +34,8 @@ const Faq = () => {
           </div>
         </div>
       </section>
-
-      {/* CONTACT SECTION */}
-      <Contact />
     </>
   );
 };
 
-export default Faq;
+export default Contact;

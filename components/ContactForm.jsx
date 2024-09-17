@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const Contact = () => {
+const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <section
       id="#contact"
-      className="flex flex-col w-screen gap-12 px-4 py-16 bg-orange-400 scroll-mt-[132rem] md:px-32 md:flex-row md:justify-center md:items-center"
+      className="flex flex-col w-screen gap-12 px-4 py-16 bg-orange-400 md:px-32 md:flex-row md:justify-center md:items-center"
     >
       {/* MODAL SECTION */}
       <div
@@ -99,10 +99,11 @@ const Contact = () => {
 
       <div className="flex flex-col flex-1 gap-4 text-white">
         <Image
-          src="/assets/images/marketing.png"
-          alt="Marketing"
-          width={300}
-          height={300}
+          src="/assets/images/man-on-laptop.png"
+          alt="Man on Laptop"
+          className="rounded-lg"
+          width={250}
+          height={250}
         />
         <span className="flex flex-col gap-2 text-left text-wrap">
           <h3 className="text-4xl font-semibold">Get Intouch</h3>
@@ -172,4 +173,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;

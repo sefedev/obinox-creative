@@ -138,7 +138,7 @@ const About = () => {
         <p className="mb-10 text-sm">Check out some of our designs</p>
         <Link
           href="/portfolio"
-          className="p-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
+          className="px-10 py-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
         >
           Click to see designs
         </Link>

@@ -61,7 +61,7 @@ const Home = () => {
   return (
     <>
       {/* BACKDROP */}
-      <>
+      {/* <>
         <ScrollEffect>
           <Image
             src="/assets/images/backdrop-left.svg"
@@ -80,10 +80,14 @@ const Home = () => {
             height={300}
           />
         </ScrollEffect>
-      </>
+      </> */}
 
       {/* HERO SECTION */}
-      <section className="relative flex flex-col items-center my-6 gap-y-8 dark:text-white dark:bg-black">
+      <div
+        className={`h-[100lvh] md:h-[90vh] flex items-center justify-center absolute bg-transparent bg-cover w-screen border-0 -top-8 bg-center dark:bg-[url('/assets/images/hero-dark.png')] -z-50`}
+      ></div>
+
+      <section className="relative flex flex-col items-center my-6 bg-transparent gap-y-8 dark:text-white">
         <div className="relative py-4 text-6xl font-semibold md:text-8xl">
           {gradients.map((gradient, index) => (
             <h1
@@ -199,7 +203,7 @@ const Home = () => {
       </section>
 
       {/* BACKDROP FOR MOBILE ONLY */}
-      <div className="relative w-full h-40 mb-24 md:hidden -inset-x-6">
+      {/* <div className="relative w-full h-40 mb-24 md:hidden -inset-x-6">
         <ScrollEffect>
           <Image
             src="/assets/images/backdrop-mobile.png"
@@ -209,137 +213,37 @@ const Home = () => {
             height={250}
           />
         </ScrollEffect>
-      </div>
+      </div> */}
 
       {/* PROCESS SECTION */}
-      <section className="flex-col gap-6 py-4 my-6 text-center flex-center">
+      <section className="flex-col text-white gap-6 py-16 my-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
         <h2 className="section_head">STEP BY STEP PROCESS</h2>
         <h1 className="section_subhead">Design with ease</h1>
 
-        {/* For desktop */}
-        <div className=" flex-col gap-8 hidden min-w-[968px] text-left md:flex">
+        <div className="md:min-w-[968px] text-left w-full md:px-16">
           <ScrollEffect>
-            <div className="flex items-center justify-between">
-              <Image
-                src="/assets/images/pro_card_1.svg"
-                alt="Card 1"
-                width={350}
-                height={150}
-              />
-              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                1
-              </span>
-              <div className="w-[22rem]">
-                <h3 className="mb-2 text-lg font-semibold">
-                  Ideas and Research
-                </h3>
-                <p className="max-w-xs text-sm ">
-                  Ideas and solutions for the design problems, I study target
-                  users' needs, behaviors, and pain points through interviews,
-                  surveys, and observations.
-                </p>
-              </div>
-            </div>
-          </ScrollEffect>
-
-          <ScrollEffect>
-            <div className="flex items-center justify-between">
-              <div className=" w-[22rem]">
-                <h3 className="mb-2 text-lg font-semibold">
-                  Structure and design
-                </h3>
-                <p className="max-w-xs text-sm ">
-                  Create quick sketches or wireframes to visualize initial
-                  concepts, I create interactive prototypes that simulate user
-                  interactions and workflows.
-                </p>
-              </div>
-              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                2
-              </span>
-              <Image
-                src="/assets/images/pro_card_2.svg"
-                alt="Card 1"
-                width={350}
-                height={150}
-              />
-            </div>
-          </ScrollEffect>
-
-          <ScrollEffect>
-            <div className="flex items-center justify-between">
-              <Image
-                src="/assets/images/pro_card_3.svg"
-                alt="Card 1"
-                width={350}
-                height={150}
-              />
-              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                3
-              </span>
-              <div className="w-[22rem]">
-                <h3 className="mb-2 text-lg font-semibold">
-                  Testing and Implementing
-                </h3>
-                <p className="max-w-xs text-sm ">
-                  Conduct tests with real users to identify issues and gather
-                  feedback and work closely with development teams to ensure the
-                  design is implemented accurately.
-                </p>
-              </div>
-            </div>
-          </ScrollEffect>
-
-          <ScrollEffect>
-            <div className="flex items-center justify-between">
-              <div className="w-[22rem]">
-                <h3 className="mb-2 text-lg font-semibold">
-                  Launch and Documentation
-                </h3>
-                <p className="max-w-xs text-sm">
-                  Release the product to users, ensuring all elements are
-                  functioning as intended and Keep detailed records of the
-                  design process, decisions, and changes.
-                </p>
-              </div>
-              <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                4
-              </span>
-              <Image
-                src="/assets/images/pro_card_4.svg"
-                alt="Card 1"
-                width={350}
-                height={150}
-              />
-            </div>
-          </ScrollEffect>
-        </div>
-
-        {/* For mobile */}
-        <div className="flex flex-col gap-8 md:hidden">
-          {PROCESS.map(({ number, title, desc }) => (
-            <ScrollEffect>
-              <span
-                key={number}
-                className="flex flex-col items-center justify-between gap-6"
-              >
-                <span className="px-6 py-4 font-semibold text-white rounded-full bg-primary-orange">
-                  {number}
-                </span>
-                <Image
-                  src={`/assets/images/pro_card_${number}.svg`}
-                  alt="Card 1"
-                  width={350}
-                  height={150}
-                />
-
-                <div className="">
-                  <h3 className="mb-2 text-lg font-semibold">{title}</h3>
-                  <p className="max-w-xs text-sm ">{desc}</p>
+            <div className="flex flex-col w-full gap-8 text-center md:text-left md:flex-row">
+              {PROCESS.map(({ number, title, desc }) => (
+                <div
+                  className="flex flex-col items-center justify-between md:items-start"
+                  key={number}
+                >
+                  <Image
+                    src={`/assets/images/pro_card_${number}.svg`}
+                    alt="process-card"
+                    width={250}
+                    height={100}
+                  />
+                  <div className="flex flex-col justify-start md:items-start">
+                    <h3 className="mt-4 mb-0.5 text-lg font-semibold">
+                      {title}
+                    </h3>
+                    <p className="flex-1 text-sm font-light min-w-xs">{desc}</p>
+                  </div>
                 </div>
-              </span>
-            </ScrollEffect>
-          ))}
+              ))}
+            </div>
+          </ScrollEffect>
         </div>
       </section>
 
@@ -391,6 +295,17 @@ const Home = () => {
             </>
           )}
         </>
+      </section>
+
+      {/* CHECK DESIGN SECTION */}
+      <section className="pb-8">
+        <p className="mb-10 text-sm">Check out some of our designs</p>
+        <Link
+          href="/portfolio"
+          className="px-10 py-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
+        >
+          Click to see designs
+        </Link>
       </section>
     </>
   );
