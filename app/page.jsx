@@ -157,7 +157,7 @@ const Home = () => {
         >
           Make your ideas come alive
         </Link> */}
-        <GradientButton title="Make your ideas come alive" link="/faq" />
+        <GradientButton title="Make your ideas come alive" link="/contact" />
       </section>
 
       {/* TESTIMONIAL SECTION */}
