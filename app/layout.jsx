@@ -12,6 +12,10 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <Head>
         <link rel="icon" href="./favicon.ico" />
+        <meta
+          property="og:description"
+          content="Official Obinox Creative Portfolio Page"
+        />
       </Head>
       <body className="relative transition-colors duration-200 font-poppins dark:bg-black dark:text-white">
         <Main>{children}</Main>
