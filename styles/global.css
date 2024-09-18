@@ -170,7 +170,7 @@ html {
 } */
 
 .glassmorphism {
-  @apply p-5 rounded-b-xl dark:bg-black/20 bg-white/80 dark:shadow-none backdrop-blur;
+  @apply p-5 rounded-b-xl dark:bg-black/60 bg-white/90 dark:shadow-none backdrop-blur;
 }
 
 .backdrop1 {

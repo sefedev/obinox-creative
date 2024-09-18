@@ -1,5 +1,6 @@
 import Contact from "@/components/ContactForm";
 import GradientButton from "@/components/GradientButton";
+import { PORTFOLIO_COVER } from "@/utils/constant";
 import Image from "next/image";
 import React from "react";
 
@@ -26,20 +27,19 @@ const Portfolio = () => {
       </section>
 
       {/* PORTFOLIO SECTION */}
-      <section className="flex flex-col w-full gap-16 p-6 my-20 bg-gray-200 dark:bg-[rgba(53,53,53,1)] rounded-md md:p-16">
-        {[
-          "I-Varse",
-          "entryX Mobile App",
-          "SentientMate Mobile app & Website",
-          "Portfolio Website",
-          "Graphics & Motion Design",
-          "3D Product Modeling & Animation",
-        ].map((portfolio, id) => (
+      <section className="flex flex-col max-w-[60rem] gap-16 p-6 my-20 bg-gray-200 dark:bg-[rgba(53,53,53,1)] rounded-md md:p-16">
+        {PORTFOLIO_COVER.map(({ name, image, link }, id) => (
           <div key={id} className="flex flex-col gap-4">
-            <div className="w-full h-[20rem] bg-gray-50 dark:bg-black rounded-md"></div>
+            <Image
+              src={`/assets/images/${image}-cover.png`}
+              width={900}
+              height={800}
+              className="w-full transition-all duration-500 ease-in-out rounded-md hover:cursor-pointer hover:opacity-50"
+            />
+
             <div className="flex flex-col gap-4 md:items-center md:flex-row md:justify-between">
               <span className="md:text-left">
-                <h3 className="text-2xl font-semibold">{portfolio}</h3>
+                <h3 className="text-2xl font-semibold">{name}</h3>
                 <p>Visit to view case study</p>
               </span>
               <GradientButton title="Click to open" link="/" />

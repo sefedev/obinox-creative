@@ -38,9 +38,11 @@ const About = () => {
             more.
           </p>
           <div className="flex flex-col w-full gap-4 text-white md:flex-row md:w-fit">
-            <Link
-              href="/"
+            <a
+              href="https://www.linkedin.com/in/damilola-akintola-383b67120/"
               className="px-12 hover:bg-[#578fd4] bg-[rgba(40,103,178,1)] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 "
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 src="/assets/images/linkedin.png"
@@ -49,9 +51,11 @@ const About = () => {
                 height={20}
               />
               LinkedIn
-            </Link>
-            <Link
-              href="/"
+            </a>
+            <a
+              href="https://www.behance.net/damilolakintol/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-12 bg-[rgba(30,109,255,1)] hover:bg-[#6390e5] duration-300 transition-all rounded-md flex-center py-4 w-full gap-1 "
             >
               <Image
@@ -61,7 +65,7 @@ const About = () => {
                 height={20}
               />
               Behance
-            </Link>
+            </a>
           </div>
         </div>
         <Image

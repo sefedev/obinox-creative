@@ -27,7 +27,7 @@ const ContactForm = () => {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: "a4fb2429-6347-408b-8b34-726c1d82fe6c",
+        access_key: "3d53a511-8c06-4fe5-9dee-14fa73decb9b",
         name: e.target.name.value,
         email: e.target.email.value,
         message: e.target.message.value,

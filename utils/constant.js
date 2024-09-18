@@ -56,10 +56,6 @@ export const TESTIMONY = [
     width: 161,
   },
   {
-    name: "cwito",
-    width: 121,
-  },
-  {
     name: "i-varse",
     width: 117,
   },
@@ -213,5 +209,30 @@ export const FAQS_2 = [
     question: "What if I don’t like the design?",
     answer:
       "Designers often have a revision process in place. If you're not satisfied, you can provide feedback and request changes. It's important to communicate clearly and work collaboratively to achieve the desired result.",
+  },
+];
+
+export const PORTFOLIO_COVER = [
+  { name: "I-Varse", image: "i-varse", link: "" },
+  { name: "EntryX Mobile App", image: "entryX", link: "" },
+  {
+    name: "SentientMate Mobile app & Website",
+    image: "sentientMate",
+    link: "",
+  },
+  {
+    name: "Portfolio Website",
+    image: "portfolio",
+    link: "",
+  },
+  {
+    name: "Graphics & Motion Design",
+    image: "graphics",
+    link: "",
+  },
+  {
+    name: "3D Product Modeling & Animation",
+    image: "3D",
+    link: "",
   },
 ];

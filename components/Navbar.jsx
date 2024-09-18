@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const { isDark, toggleDarkMode } = useContext(ThemeContext);
@@ -34,6 +35,11 @@ const Navbar = () => {
   ];
 
   const pathname = usePathname();
+
+  const menuVariants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: "-100%" },
+  };
 
   return (
     <nav className="sticky top-0 left-0 z-50 flex w-full p-4 mb-12 text-sm glassmorphism dark:bg-black dark:text-white flex-between md:px-20">
@@ -121,74 +127,83 @@ const Navbar = () => {
       </button>
 
       {/* MOBILE NAVIGATION */}
-      <div
-        className={`${
-          openNav ? "block" : "hidden"
-        } fixed flex inset-0 h-screen w-full  z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[10px] backdrop1 flex-col py-36 items-center`}
-      >
-        <div className="flex-between w-[70%] mb-8">
-          <button className="max-w-fit" onClick={() => setOpenNav(false)}>
-            <Image
-              src="/assets/icons/close.svg"
-              alt="close"
-              width={24}
-              height={24}
-            />
-          </button>
-          <button
-            className={`max-w-fit p-1 rounded-md bg-black md:block ${
-              isDark && "bg-primary-orange"
-            }`}
-            onClick={() => {
-              toggleDarkMode();
-              setOpenNav(false);
-            }}
+      <AnimatePresence>
+        {openNav && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+            className={`${
+              openNav ? "block" : "hidden"
+            } fixed flex inset-0 h-screen w-full  z-50 bg-gradient-to-r from-[rgba(255,161,0,0.6)] to-[rgba(153,97,0,0.6)] backdrop-blur-[50px] backdrop1 flex-col py-36 items-center`}
           >
-            <Image
-              src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
-              alt="darkMode"
-              width={16}
-              height={16}
-            />
-          </button>
-        </div>
+            <div className="flex-between w-[70%] mb-8">
+              <button className="max-w-fit" onClick={() => setOpenNav(false)}>
+                <Image
+                  src="/assets/icons/close.svg"
+                  alt="close"
+                  width={24}
+                  height={24}
+                />
+              </button>
+              <button
+                className={`max-w-fit p-1 rounded-md bg-black md:block ${
+                  isDark && "bg-primary-orange"
+                }`}
+                onClick={() => {
+                  toggleDarkMode();
+                  setOpenNav(false);
+                }}
+              >
+                <Image
+                  src={`/assets/icons/${isDark ? "light" : "dark"}.svg`}
+                  alt="darkMode"
+                  width={16}
+                  height={16}
+                />
+              </button>
+            </div>
 
-        <Link href="/" onClick={() => setOpenNav(false)}>
-          <div className="flex gap-2 max-w-fit flex-center">
-            <span className="size-[2.5rem] p-0.5 grid place-items-center rounded-full border-2 border-black">
-              <Image
-                src="/assets/images/obinox-logo.png"
-                alt="Obinox Creative"
-                width={50}
-                height={50}
-                className="rounded-full"
-              />
-            </span>
-            <span>
-              <h2 className="text-lg font-semibold">Obinox Creative</h2>
-              <h6 className="text-sm">UI/UX Designer</h6>
-            </span>
-          </div>
-        </Link>
+            <Link href="/" onClick={() => setOpenNav(false)}>
+              <div className="flex gap-2 max-w-fit flex-center">
+                <span className="size-[2.5rem] p-0.5 grid place-items-center rounded-full border-2 border-black">
+                  <Image
+                    src="/assets/images/obinox-logo.png"
+                    alt="Obinox Creative"
+                    width={50}
+                    height={50}
+                    className="rounded-full"
+                  />
+                </span>
+                <span>
+                  <h2 className="text-lg font-semibold">Obinox Creative</h2>
+                  <h6 className="text-sm">UI/UX Designer</h6>
+                </span>
+              </div>
+            </Link>
 
-        <ul className="flex flex-col gap-2 mt-4 text-xl">
-          <li>
-            <Link href="/about" onClick={() => setOpenNav(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="/portfolio" onClick={() => setOpenNav(false)}>
-              Portfolio
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" onClick={() => setOpenNav(false)}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
+            <ul className="flex flex-col gap-2 mt-4 text-xl">
+              <li>
+                <Link href="/about" onClick={() => setOpenNav(false)}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" onClick={() => setOpenNav(false)}>
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" onClick={() => setOpenNav(false)}>
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

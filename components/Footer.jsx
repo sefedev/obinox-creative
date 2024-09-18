@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-wrap px-4 py-16 mt-4 gap-x-16 md:px-20 md:gap-x-36">
+    <footer className="flex flex-wrap justify-between px-4 py-16 mt-4 gap-x-16 md:px-20 md:gap-x-36">
       <div className="mb-5">
         <Link href={""}>
           <h2 className="font-semibold mb-1.5 text-primary-orange">Home</h2>
@@ -85,7 +85,7 @@ const Footer = () => {
         <ul>
           <li className="mb-1 text-sm">
             <Link
-              href="/faq"
+              href="/contact"
               className="transition duration-300 hover:text-primary-orange"
             >
               Questions
@@ -93,7 +93,7 @@ const Footer = () => {
           </li>
           <li className="mb-1 text-sm">
             <Link
-              href="/faq"
+              href="/contact"
               className="transition duration-300 hover:text-primary-orange"
             >
               Contact
@@ -102,14 +102,17 @@ const Footer = () => {
         </ul>
       </div>
 
-      <div className="w-full py-4 flex-between">
+      <div className="w-full pt-24 flex-between">
         <Link href="/">
-          <h2 className="font-semibold">Obinox Creative</h2>
+          <h2 className="text-xl font-semibold">Obinox Creative</h2>
           <h6 className="text-xs">UI/UX Designer</h6>
         </Link>
-        <span className="text-xs text-gray-600 dark:text-gray-400 font-extralight">
+        <a
+          href="mailto:copyright@obinox.co"
+          className="text-xs text-gray-600 transition duration-300 ease-in-out dark:text-gray-400 font-extralight hover:underline"
+        >
           Copyright@obinox.co
-        </span>
+        </a>
       </div>
     </footer>
   );
