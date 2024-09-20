@@ -78,16 +78,6 @@ html {
   }
 }
 
-/* @layer utilities {
-  .scroll-on-scroll {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .scroll-on-scroll.is-visible {
-    opacity: 1;
-  }
-} */
-
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
@@ -97,14 +87,6 @@ html {
 .app {
   @apply relative z-10 flex flex-col items-center justify-center px-6 mx-auto text-center transition-all max-w-7xl sm:px-16;
 }
-
-/* .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm  flex items-center justify-center;
-}
-
-.outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm flex items-center justify-center;
-} */
 
 .section_head {
   @apply tracking-[0.2rem] font-light;
@@ -145,14 +127,6 @@ html {
   background-position: 100% 0; /* Shift the gradient on hover */
 }
 
-/* .btn-orange-gradient {
-  @apply bg-gradient-to-r from-[rgba(255,51,0,1)] to-[rgba(255,161,0,1)] py-4 px-8 transition-all rounded-lg hover:from-green-500 hover:to-green-800 duration-300;
-} */
-
-/* .btn-orange-gradient {
-  @apply px-8 py-4 transition-all duration-500 bg-orange-500 hover:bg-green-500;
-} */
-
 .green_gradient {
   @apply text-transparent bg-gradient-to-r from-green-400 to-green-500 bg-clip-text;
 }
@@ -164,10 +138,6 @@ html {
 .desc {
   @apply max-w-2xl mt-5 text-lg text-gray-600 sm:text-xl;
 }
-
-/* .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
-} */
 
 .glassmorphism {
   @apply p-5 rounded-b-xl dark:bg-black/60 bg-white/90 dark:shadow-none backdrop-blur;

@@ -60,33 +60,7 @@ const Home = () => {
 
   return (
     <>
-      {/* BACKDROP */}
-      {/* <>
-        <ScrollEffect>
-          <Image
-            src="/assets/images/backdrop-left.svg"
-            alt="backdrop-left"
-            className="absolute top-0 hidden -z-50 -left-10 md:block"
-            width={300}
-            height={300}
-          />
-        </ScrollEffect>
-        <ScrollEffect>
-          <Image
-            src="/assets/images/backdrop-right.svg"
-            alt="backdrop-right"
-            className="absolute top-0 hidden -z-50 -right-10 md:block"
-            width={300}
-            height={300}
-          />
-        </ScrollEffect>
-      </> */}
-
       {/* HERO SECTION */}
-      {/* <div
-        className={`h-[100lvh] md:h-[90vh] flex items-center justify-center absolute bg-transparent bg-cover w-screen border-0 -top-8 bg-center dark:bg-[url('/assets/images/hero-dark.png')] -z-50`}
-      ></div> */}
-
       <section className="relative flex flex-col items-center my-6 bg-transparent gap-y-8 dark:text-white">
         <div className="relative py-4 text-6xl font-semibold md:text-8xl">
           {gradients.map((gradient, index) => (
@@ -112,51 +86,6 @@ const Home = () => {
           Experience an exciting process, as we execute everything design
           related and many more.
         </p>
-        {/* <div className="md:max-w-lg ">
-          <ul className="flex flex-wrap gap-x-8 gap-y-1 flex-center">
-            <li className="flex gap-1 flex-center">
-              <span>
-                <Image
-                  src="/assets/icons/checkmark-light.svg"
-                  alt="checkmark"
-                  width={15}
-                  height={15}
-                />
-              </span>
-              <p>Website/Mobile App Design</p>
-            </li>
-            <li className="flex gap-1 flex-center">
-              <span>
-                <Image
-                  src="/assets/icons/checkmark-light.svg"
-                  alt="checkmark"
-                  width={15}
-                  height={15}
-                />
-              </span>
-              <p>Project Based Packages</p>
-            </li>
-            <li className="flex gap-1 flex-center">
-              <span>
-                <Image
-                  src="/assets/icons/checkmark-light.svg"
-                  alt="checkmark"
-                  width={15}
-                  height={15}
-                />
-              </span>
-              <p>Branding and Advertising Materials</p>
-            </li>
-          </ul>
-        </div> */}
-
-        {/* <Link
-          href="/faq#contact"
-          passHref
-          className="text-white border dark:border-black btn-orange-gradient "
-        >
-          Make your ideas come alive
-        </Link> */}
         <GradientButton title="Make your ideas come alive" link="/contact" />
       </section>
 
@@ -201,19 +130,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* BACKDROP FOR MOBILE ONLY */}
-      {/* <div className="relative w-full h-40 mb-24 md:hidden -inset-x-6">
-        <ScrollEffect>
-          <Image
-            src="/assets/images/backdrop-mobile.png"
-            alt="backdrop-left"
-            className="absolute w-[22rem] top-0 h-[14rem] block md:hidden"
-            width={250}
-            height={250}
-          />
-        </ScrollEffect>
-      </div> */}
 
       {/* PROCESS SECTION */}
       <section className="flex-col text-white gap-6 py-16 my-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
