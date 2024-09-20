@@ -107,12 +107,13 @@ const Footer = () => {
           <h2 className="text-xl font-semibold">Obinox Creative</h2>
           <h6 className="text-xs">UI/UX Designer</h6>
         </Link>
-        <a
-          href="mailto:copyright@obinox.co"
-          className="text-xs text-gray-600 transition duration-300 ease-in-out dark:text-gray-400 font-extralight hover:underline"
-        >
-          Copyright@obinox.co
-        </a>
+        <span className="text-xs text-gray-600 dark:text-gray-400 font-extralight ">
+          &copy; {new Date().getFullYear()}{" "}
+          <a href="#" className="hover:underline">
+            Obinox.co
+          </a>
+          , All Rights Reserved.
+        </span>
       </div>
     </footer>
   );
