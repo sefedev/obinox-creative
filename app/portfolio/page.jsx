@@ -3,6 +3,7 @@ import GradientButton from "@/components/GradientButton";
 import { PORTFOLIO_COVER } from "@/utils/constant";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Portfolio = () => {
   return (
@@ -31,18 +32,36 @@ const Portfolio = () => {
         {PORTFOLIO_COVER.map(({ name, image, link }, id) => (
           <div key={id} className="flex flex-col gap-4">
             <Image
-              src={`/assets/images/${image}-cover.png`}
+              src={`/assets/images/${image}.png`}
               width={900}
               height={800}
+              alt="Portfolio Cover"
               className="w-full transition-all duration-500 ease-in-out rounded-md hover:cursor-pointer hover:opacity-50"
             />
 
             <div className="flex flex-col gap-4 md:items-center md:flex-row md:justify-between">
               <span className="md:text-left">
-                <h3 className="text-2xl font-semibold">{name}</h3>
-                <p>Visit to view case study</p>
+                <h3 className="text-2xl font-semibold underline">{name}</h3>
               </span>
-              <GradientButton title="Click to open" link="/" />
+              <div className="flex flex-col gap-4 md:flex-row">
+                {image === "entryx-cs" ? (
+                  <Link
+                    href="/"
+                    className="relative px-8 py-4 overflow-hidden text-white rounded-lg bg-gradient-to-r from-blue-600 to-blue-400"
+                  >
+                    <span className="relative z-10">Download as PDF</span>
+                    <span className="absolute inset-0 transition-opacity duration-300 ease-in-out bg-green-700 opacity-0 hover:opacity-100"></span>
+                  </Link>
+                ) : (
+                  <></>
+                )}
+                <GradientButton
+                  title={
+                    image === "entryx-cs" ? "View Case Study" : "View Portfolio"
+                  }
+                  link={link}
+                />
+              </div>
             </div>
           </div>
         ))}

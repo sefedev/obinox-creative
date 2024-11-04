@@ -213,26 +213,26 @@ export const FAQS_2 = [
 ];
 
 export const PORTFOLIO_COVER = [
-  { name: "I-Varse", image: "i-varse", link: "" },
-  { name: "EntryX Mobile App", image: "entryX", link: "" },
-  {
-    name: "SentientMate Mobile app & Website",
-    image: "sentientMate",
-    link: "",
-  },
-  {
-    name: "Portfolio Website",
-    image: "portfolio",
-    link: "",
-  },
+  { name: "EntryX Mobile App", image: "entryx-cs", link: "https://www.behance.net/gallery/208212411/entryX-Case-Study" },
+  { name: "UI Design Portfolio", image: "ui-design-cs", link: "https://www.behance.net/gallery/186469201/UI-Design-Portfolio" },
   {
     name: "Graphics & Motion Design",
-    image: "graphics",
-    link: "",
+    image: "graphics-cs",
+    link: "https://www.behance.net/gallery/135774409/Graphic-Motion-Design-Portfolio",
   },
-  {
-    name: "3D Product Modeling & Animation",
-    image: "3D",
-    link: "",
-  },
+  // {
+  //   name: "Portfolio Website",
+  //   image: "portfolio",
+  //   link: "",
+  // },
+  // {
+  //   name: "Graphics & Motion Design",
+  //   image: "graphics",
+  //   link: "",
+  // },
+  // {
+  //   name: "3D Product Modeling & Animation",
+  //   image: "3D",
+  //   link: "",
+  // },
 ];
