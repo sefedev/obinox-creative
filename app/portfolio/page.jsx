@@ -44,7 +44,7 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-semibold underline">{name}</h3>
               </span>
               <div className="flex flex-col gap-4 md:flex-row">
-                {image === "entryx-cs" ? (
+                {/* {image === "entryx-cs" ? (
                   <Link
                     href="/"
                     className="relative px-8 py-4 overflow-hidden text-white rounded-lg bg-gradient-to-r from-blue-600 to-blue-400"
@@ -54,7 +54,7 @@ const Portfolio = () => {
                   </Link>
                 ) : (
                   <></>
-                )}
+                )} */}
                 <GradientButton
                   title={
                     image === "entryx-cs" ? "View Case Study" : "View Portfolio"
