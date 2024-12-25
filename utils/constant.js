@@ -213,26 +213,53 @@ export const FAQS_2 = [
 ];
 
 export const PORTFOLIO_COVER = [
-  { name: "EntryX Mobile App", image: "entryx-cs", link: "https://www.behance.net/gallery/208212411/entryX-Case-Study" },
-  { name: "UI Design Portfolio", image: "ui-design-cs", link: "https://www.behance.net/gallery/186469201/UI-Design-Portfolio" },
+  {
+    name: "EntryX Mobile App",
+    image: "entryx-cs",
+    link: "https://www.behance.net/gallery/208212411/entryX-Case-Study",
+  },
+  {
+    name: "UI Design Portfolio",
+    image: "ui-design-cs",
+    link: "https://www.behance.net/gallery/186469201/UI-Design-Portfolio",
+  },
   {
     name: "Graphics & Motion Design",
     image: "graphics-cs",
     link: "https://www.behance.net/gallery/135774409/Graphic-Motion-Design-Portfolio",
   },
-  // {
-  //   name: "Portfolio Website",
-  //   image: "portfolio",
-  //   link: "",
-  // },
-  // {
-  //   name: "Graphics & Motion Design",
-  //   image: "graphics",
-  //   link: "",
-  // },
-  // {
-  //   name: "3D Product Modeling & Animation",
-  //   image: "3D",
-  //   link: "",
-  // },
+];
+
+export const TESTIMONIAL = [
+  {
+    number: "1",
+    name: "Temdayo Omoniyi",
+    title: "Data/Software Engineer",
+    desc: "I had the pleasure of working with Akintola Damilola on several projects, and I can confidently say that they are an incredibly talented and professional designer.",
+    rating: 5,
+    media: "linkedin",
+  },
+  {
+    number: "2",
+    name: "Adebola Ismial",
+    title: "Software Engineer",
+    desc: "Attentive, easy to work with and has affinity for good designs….there’s more room for improvement though",
+    rating: 4,
+    media: "linkedin",
+  },
+  {
+    number: "3",
+    name: "Emmymania",
+    title: "Designer",
+    desc: "Awesome work, looks amazing. 👍🏽🔥",
+    rating: 5,
+    media: "instagram",
+  },
+];
+
+export const SELECT_SERVICE = [
+  { name: "UI/UX Design", value: "uiux" },
+  { name: "Graphics Design", value: "graphics" },
+  { name: "Motion graphics", value: "motion" },
+  { name: "3D Modeling & Animation", value: "animation" },
 ];

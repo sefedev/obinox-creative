@@ -176,3 +176,9 @@ html {
 .flex-between {
   @apply flex items-center justify-between;
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

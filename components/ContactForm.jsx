@@ -98,13 +98,6 @@ const ContactForm = () => {
       </div>
 
       <div className="flex flex-col flex-1 gap-4 text-white">
-        <Image
-          src="/assets/images/man-on-laptop.png"
-          alt="Man on Laptop"
-          className="rounded-lg"
-          width={250}
-          height={250}
-        />
         <span className="flex flex-col gap-2 text-left text-wrap">
           <h3 className="text-4xl font-semibold">Get Intouch</h3>
           <p className="text-xs">
@@ -112,6 +105,27 @@ const ContactForm = () => {
             a time to chat? Looking forward to hearing from you!
           </p>
         </span>
+        <a
+          href="mailto:dami@obinox.co"
+          role="button"
+          className="flex items-center justify-center w-full gap-2 p-4 font-light text-black transition-all duration-150 bg-white rounded-md hover:bg-primary-orange group"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 28 23"
+            className="fill-primary-orange group-hover:fill-white"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.2 22.5C3.08609 22.5 2.0178 22.0654 1.23015 21.2918C0.442499 20.5182 0 19.469 0 18.375V4.625C0 3.53098 0.442499 2.48177 1.23015 1.70818C2.0178 0.934597 3.08609 0.5 4.2 0.5H23.8C24.9139 0.5 25.9822 0.934597 26.7698 1.70818C27.5575 2.48177 28 3.53098 28 4.625V18.375C28 19.469 27.5575 20.5182 26.7698 21.2918C25.9822 22.0654 24.9139 22.5 23.8 22.5H4.2ZM7.875 6.3025C7.73239 6.1829 7.56676 6.09266 7.38796 6.03713C7.20915 5.9816 7.02081 5.96192 6.83412 5.97926C6.64742 5.99659 6.46617 6.05059 6.30113 6.13804C6.13609 6.2255 5.99062 6.34463 5.87335 6.48836C5.75609 6.63209 5.66942 6.79749 5.6185 6.97476C5.56757 7.15202 5.55342 7.33752 5.57689 7.52025C5.60037 7.70298 5.66098 7.87922 5.75513 8.03851C5.84929 8.19779 5.97506 8.33687 6.125 8.4475L11.375 12.5739C12.1199 13.1596 13.0457 13.4788 14 13.4788C14.9543 13.4788 15.8801 13.1596 16.625 12.5739L21.875 8.44888C22.0186 8.33602 22.1381 8.19649 22.2268 8.03826C22.3155 7.88003 22.3716 7.70619 22.3919 7.52667C22.4121 7.34716 22.3962 7.16547 22.345 6.99199C22.2938 6.81852 22.2083 6.65665 22.0934 6.51562C21.9785 6.3746 21.8364 6.25719 21.6753 6.17009C21.5142 6.08299 21.3372 6.0279 21.1544 6.00799C20.9717 5.98807 20.7867 6.0037 20.61 6.054C20.4334 6.1043 20.2686 6.18827 20.125 6.30112L14.875 10.4261C14.6267 10.6214 14.3181 10.7278 14 10.7278C13.6819 10.7278 13.3733 10.6214 13.125 10.4261L7.875 6.3025Z"
+              // fill="#FF3300"
+            />
+          </svg>
+          dami@obinox.co
+        </a>
       </div>
 
       <div className="flex flex-col flex-1 rounded-md bg-[rgba(41,45,56,1)]">

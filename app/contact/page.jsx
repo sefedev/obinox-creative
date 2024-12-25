@@ -17,7 +17,7 @@ const Contact = () => {
         <div className="flex flex-col w-screen gap-10 md:items-start md:px-20 md:flex-row">
           <FaqList />
 
-          <div className="relative flex flex-col items-center justify-start flex-1">
+          {/* <div className="relative flex flex-col items-center justify-start flex-1">
             <Image
               src="/assets/images/faq.png"
               alt="Question"
@@ -31,7 +31,7 @@ const Contact = () => {
                 We are here to answer any question you have for us
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

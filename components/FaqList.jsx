@@ -14,7 +14,7 @@ const FaqList = () => {
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full gap-6 px-2 mx-auto">
+    <div className="flex flex-col flex-1 max-w-2xl gap-6 px-2 mx-auto">
       {first &&
         FAQS_1.map((faq, index) => (
           <FaqItem
@@ -36,6 +36,7 @@ const FaqList = () => {
           />
         ))}
       <div className="gap-4 flex-center">
+        <span className="text-sm font-light">Prev</span>
         <button
           className="bg-[rgba(255,116,0,1)] hover:bg-orange-400 transition-all duration-300 text-lg text-white font-semibold px-2.5 py-0.5 rounded-full"
           onClick={() => {
@@ -54,6 +55,7 @@ const FaqList = () => {
         >
           {">"}
         </button>
+        <span className="text-sm font-light">Next</span>
       </div>
     </div>
   );

@@ -9,18 +9,26 @@ const Portfolio = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="text-left gap-16 text-white -mt-12 flex flex-col md:flex-row flex-center bg-gradient-to-b py-24 from-[rgba(255,156,0,1)] to-[rgba(255,51,0,1)] px-4 w-screen">
+      <section className="flex flex-col w-screen gap-16 px-4 py-24 -mt-12 text-left text-white md:flex-row flex-center">
         <div>
-          <h1 className="mb-4 text-5xl font-bold">
-            Check out what has
-            <br /> been done so far
+          <h1 className="mb-4 text-5xl font-bold text-black dark:text-white">
+            Check out some of
+            <br /> my <span className="text-primary-orange">designs</span>
           </h1>
-          <p>See Projects i have worked on recently.</p>
+          <p className="mb-8 text-black dark:text-white">
+            Need Design services?
+          </p>
+          <Link
+            className="px-8 py-4 my-4 rounded-md btn-orange-gradient"
+            href="/booking"
+          >
+            Book Now
+          </Link>
         </div>
 
         <Image
-          src="/assets/images/hand-collage.png"
-          alt="hand-collage"
+          src="/assets/images/portfolio-obj.png"
+          alt="portfolio object"
           className="rounded-lg"
           width={300}
           height={400}
@@ -44,17 +52,6 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-semibold underline">{name}</h3>
               </span>
               <div className="flex flex-col gap-4 md:flex-row">
-                {/* {image === "entryx-cs" ? (
-                  <Link
-                    href="/"
-                    className="relative px-8 py-4 overflow-hidden text-white rounded-lg bg-gradient-to-r from-blue-600 to-blue-400"
-                  >
-                    <span className="relative z-10">Download as PDF</span>
-                    <span className="absolute inset-0 transition-opacity duration-300 ease-in-out bg-green-700 opacity-0 hover:opacity-100"></span>
-                  </Link>
-                ) : (
-                  <></>
-                )} */}
                 <GradientButton
                   title={
                     image === "entryx-cs" ? "View Case Study" : "View Portfolio"
@@ -66,9 +63,6 @@ const Portfolio = () => {
           </div>
         ))}
       </section>
-
-      {/* CONTACT SECTION */}
-      <Contact />
     </>
   );
 };
