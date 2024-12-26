@@ -3,11 +3,11 @@ import fs from "fs/promises";
 import { NextResponse } from "next/server";
 import path from "path";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
 
 export async function POST(req) {
   console.log("working!");
