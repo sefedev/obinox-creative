@@ -90,7 +90,6 @@ const Home = () => {
         </p>
         <GradientButton title="Get Started" link="/contact" />
       </section>
-
       {/* DESIGN EXPERIENCE SECTION */}
       <section className="flex-col text-white gap-6 py-16 mt-24 mb-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
         <h2 className="section_head">EXCITING DESIGN EXPERIENCE</h2>
@@ -124,7 +123,6 @@ const Home = () => {
           </ScrollEffect> */}
         </div>
       </section>
-
       {/* WORKED WITH SECTION */}
       <section className="flex-col gap-6 py-4 my-16 flex-center">
         <h2 className="tracking-[0.2rem] font-light">WE HAVE WORKED WITH</h2>
@@ -166,7 +164,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* SERVICE SECTION */}
       <section className="flex-col hidden gap-6 py-4 my-6 text-center flex-centers">
         <h2 className="section_head">EXPLORE MY SERVICES</h2>
@@ -216,7 +213,6 @@ const Home = () => {
           )}
         </>
       </section>
-
       {/* TESTIMONIAL SECTION */}
       <section className="flex-col gap-6 py-4 my-6 text-center flex-center">
         <h2 className="text-3xl text-primary-orange">What Clients Say!</h2>
