@@ -1,8 +1,10 @@
 "use client";
 
 import CheckboxButton from "@/components/CheckButton";
+import GradientButton from "@/components/GradientButton";
 import { StatusContext } from "@/context/status";
 import { SELECT_SERVICE } from "@/utils/constant";
+import Link from "next/link";
 import React, { useContext, useState } from "react";
 
 const Booking = () => {
@@ -201,7 +203,7 @@ const Booking = () => {
             </div>
           </div>
 
-          <div className="grid w-full my-4 place-items-center">
+          <div className="flex flex-wrap items-center justify-center w-full gap-4 my-4">
             <button
               type="submit"
               className={`${
@@ -239,6 +241,19 @@ const Booking = () => {
               </span>
               <span className="absolute inset-0 transition-opacity duration-300 ease-in-out bg-green-700 opacity-0 hover:opacity-100"></span>
             </button>
+
+            <Link
+              className={`${
+                submissionStatus === "submitting" &&
+                "from-slate-600/30 to-slate-400/30"
+              } relative w-full px-8 py-4 overflow-hidden text-white rounded-lg md:w-48 bg-gradient-to-r from-slate-600 to-slate-400`}
+              href="/"
+            >
+              <span className={`relative z-10 w-full grid place-items-center`}>
+                Cancel
+              </span>
+              <span className="absolute inset-0 transition-opacity duration-300 ease-in-out bg-green-700 opacity-0 hover:opacity-100"></span>
+            </Link>
           </div>
         </div>
       </form>
