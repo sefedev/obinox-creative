@@ -88,7 +88,7 @@ const Home = () => {
           Experience an exciting process, as we execute everything design
           related and many more.
         </p>
-        <GradientButton title="Get Started" link="/contact" />
+        <GradientButton title="Get Started" link="/booking" />
       </section>
       {/* DESIGN EXPERIENCE SECTION */}
       <section className="flex-col text-white gap-6 py-16 mt-24 mb-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
