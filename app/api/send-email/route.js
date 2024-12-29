@@ -15,7 +15,7 @@ export async function POST(req) {
   try {
     const formData = await req.formData();
 
-    const files = formData.getAll("files");
+    // const files = formData.getAll("files");
     const name = formData.get("name");
     const number = formData.get("number");
     const gender = formData.get("gender");
@@ -23,29 +23,25 @@ export async function POST(req) {
     const details = formData.get("details");
     const service = formData.get("service");
 
-    console.log(service);
+    // let attachments = [];
 
-    let attachments = [];
+    // if (files.length > 0) {
+    //   for (const file of files) {
+    //     console.log(file);
+    //     console.log(Object.keys(file));
+    //     const buffer = Buffer.from(await file.arrayBuffer());
 
-    if (files.length > 0) {
-      for (const file of files) {
-        console.log(file);
-        console.log(Object.keys(file));
-        const buffer = Buffer.from(await file.arrayBuffer());
+    //     const tempFile = `${path.resolve(".")}/${file.name}`;
 
-        const tempFile = `${path.resolve(".")}/${file.name}`;
+    //     fs.writeFile(tempFile, buffer);
 
-        fs.writeFile(tempFile, buffer);
-
-        attachments.push({
-          filename: file.name,
-          path: tempFile,
-          contentType: file.mimetype,
-        });
-      }
-    }
-
-    // const services = service.join(", ");
+    //     attachments.push({
+    //       filename: file.name,
+    //       path: tempFile,
+    //       contentType: file.mimetype,
+    //     });
+    //   }
+    // }
 
     // Create a transporter object using your email service credentials
     const transporter = nodemailer.createTransport({
@@ -70,13 +66,13 @@ export async function POST(req) {
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong> ${details}</p>
         `,
-      attachments: attachments,
+      // attachments: attachments,
     };
 
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    for (const file of attachments) fs.unlink(file.path);
+    // for (const file of attachments) fs.unlink(file.path);
 
     return NextResponse.json({ message: "Email sent successfully!" });
     // });

@@ -1,7 +1,6 @@
 "use client";
 
 import CheckboxButton from "@/components/CheckButton";
-import GradientButton from "@/components/GradientButton";
 import { StatusContext } from "@/context/status";
 import { SELECT_SERVICE } from "@/utils/constant";
 import Link from "next/link";
@@ -19,7 +18,7 @@ const Booking = () => {
     email: "",
     gender: "",
     details: "",
-    files: [],
+    // files: [],
   });
 
   const handleChange = (e) => {
@@ -177,7 +176,8 @@ const Booking = () => {
             ></textarea>
           </div>
 
-          <div className="mt-8">
+          {/* FILE UPLOAD  */}
+          {/* <div className="mt-8">
             <p className="mb-2 text-left">Upload Reference</p>
             <input
               type="file"
@@ -201,7 +201,7 @@ const Booking = () => {
                 </p>
               )}
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-wrap items-center justify-center w-full gap-4 my-4">
             <button
