@@ -1,9 +1,11 @@
 "use client";
 
+import CheckBox from "@/components/CheckBox";
 import CheckboxButton from "@/components/CheckButton";
 import { StatusContext } from "@/context/status";
 import { SELECT_SERVICE } from "@/utils/constant";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 
 const Booking = () => {
@@ -20,6 +22,8 @@ const Booking = () => {
     details: "",
     // files: [],
   });
+
+  const router = useRouter();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -107,7 +111,30 @@ const Booking = () => {
   return (
     <section className="relative">
       <form>
-        <div className="flex flex-col w-full gap-4 p-4 py-8 bg-white rounded-md md:p-8 dark:text-black">
+        <div className="relative flex flex-col w-full gap-4 p-4 py-8 bg-white rounded-md md:p-8 dark:text-black">
+          <div className="flex justify-start w-full">
+            <button
+              type="button"
+              onClick={() => router.back()}
+              className="flex"
+            >
+              <svg
+                width="30"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-arrow-left"
+              >
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back
+            </button>
+          </div>
           <p>Select Service:</p>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {SELECT_SERVICE.map(({ name }, id) => (
@@ -119,6 +146,14 @@ const Booking = () => {
               </div>
             ))}
           </div>
+          {/* NATIVE CHECKBOX */}
+          {/* <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+            {SELECT_SERVICE.map(({ name }, id) => (
+              <div key={id}>
+                <CheckBox name={name} />
+              </div>
+            ))}
+          </div> */}
 
           <div className="flex flex-wrap justify-center gap-4">
             <input

@@ -67,19 +67,19 @@ const ImageCarousel = () => {
     <Carousel className="relative">
       <CarouselContent className="relative flex w-full">
         {[1, 2, 3, 4, 5, 6, 7].map((index, id) => (
-          <CarouselItem key={id} className="md:basis-1/4 basis-3/4">
+          <CarouselItem key={id} className="md:basis-[22%] basis-3/4">
             <Image
               key={id}
               src={`/assets/images/design-${index}.png`}
               alt={`design-${index}`}
               className="flex transition-transform duration-300 rounded-lg"
-              width={300}
+              width={250}
               height={200}
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex justify-center w-full gap-12 mt-8">
+      <div className="justify-center hidden w-full gap-12 mt-8 md:flex">
         <CarouselPrevious />
         <CarouselNext />
       </div>

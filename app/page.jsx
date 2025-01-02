@@ -91,10 +91,8 @@ const Home = () => {
         <GradientButton title="Get Started" link="/booking" />
       </section>
       {/* DESIGN EXPERIENCE SECTION */}
-      <section className="flex-col text-white gap-6 py-16 mt-24 mb-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
+      <section className="flex-col text-white gap-6 pt-8 pb-12 md:pb-8 mt-20 mb-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
         <h2 className="section_head">EXCITING DESIGN EXPERIENCE</h2>
-        <h1 className="section_subhead">See a few designs</h1>
-
         <ImageCarousel />
 
         <div className="md:min-w-[968px] hidden text-left w-full md:px-16">

@@ -4,35 +4,42 @@ import { PORTFOLIO_COVER } from "@/utils/constant";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import ScrollEffect from "@/components/ScrollEffect";
 
 const Portfolio = () => {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="flex flex-col w-screen gap-16 px-4 py-24 -mt-12 text-left text-white md:flex-row flex-center">
-        <div>
-          <h1 className="mb-4 text-5xl font-bold text-black dark:text-white">
-            Check out some of
-            <br /> my <span className="text-primary-orange">designs</span>
-          </h1>
-          <p className="mb-8 text-black dark:text-white">
-            Need Design services?
-          </p>
-          <Link
-            className="px-8 py-4 my-4 rounded-md btn-orange-gradient"
-            href="/booking"
-          >
-            Book Now
-          </Link>
+      <section className="flex flex-col w-screen gap-16 px-4 py-20 -mt-12 text-left text-white md:flex-row flex-center">
+        <div className="text-center">
+          <ScrollEffect>
+            <h1 className="mb-8 text-6xl font-bold text-black dark:text-white">
+              Check out some of my{" "}
+              <span className="text-primary-orange">designs</span>
+            </h1>
+          </ScrollEffect>
+          <ScrollEffect>
+            <p className="mb-8 text-black dark:text-white">
+              Need Design services?
+            </p>
+          </ScrollEffect>
+          <ScrollEffect>
+            <Link
+              className="px-8 py-4 my-4 rounded-md btn-orange-gradient"
+              href="/booking"
+            >
+              Book Now
+            </Link>
+          </ScrollEffect>
         </div>
 
-        <Image
+        {/* <Image
           src="/assets/images/portfolio-obj.png"
           alt="portfolio object"
           className="rounded-lg"
           width={300}
           height={400}
-        />
+        /> */}
       </section>
 
       {/* PORTFOLIO SECTION */}

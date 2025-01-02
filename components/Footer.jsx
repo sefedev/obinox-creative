@@ -111,8 +111,8 @@ const Footer = () => {
           target="_blank"
         >
           <svg
-            width="28"
-            height="28"
+            width="22"
+            height="22"
             viewBox="0 0 28 28"
             className="dark:fill-white fill-black"
             xmlns="http://www.w3.org/2000/svg"
@@ -138,8 +138,8 @@ const Footer = () => {
           target="_blank"
         >
           <svg
-            width="40"
-            height="28"
+            width="24"
+            height="24"
             viewBox="0 0 40 28"
             className="dark:fill-white fill-black"
             xmlns="http://www.w3.org/2000/svg"
