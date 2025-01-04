@@ -11,6 +11,7 @@ import Link from "next/link";
 import React, { useContext, useEffect, useState, useRef } from "react";
 import ImageCarousel from "@/components/ImageCarousel";
 import StarRating from "@/components/Rating";
+import Limitless from "@/components/Limitless";
 
 const Home = () => {
   const [first, setFirst] = useState(true);
@@ -65,7 +66,7 @@ const Home = () => {
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center my-6 bg-transparent gap-y-8 dark:text-white">
         <div className="relative py-4 text-6xl font-semibold md:text-8xl">
-          {gradients.map((gradient, index) => (
+          {/* {gradients.map((gradient, index) => (
             <h1
               key={index}
               className={`absolute inset-0 bg-clip-text text-transparent ${gradient} transition-opacity duration-1000 ease-in-out ${
@@ -76,10 +77,13 @@ const Home = () => {
               Limitless
               <br /> Digital Designs
             </h1>
-          ))}
-          <span className="relative text-transparent">
+          ))} */}
+          {/* <span className="relative text-transparent">
             Limitless
             <br /> Digital Designs
+          </span> */}
+          <span className="relative">
+            <Limitless />
           </span>
         </div>
 
