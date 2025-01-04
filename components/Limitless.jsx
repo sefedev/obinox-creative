@@ -10,18 +10,16 @@ const Limitless = () => {
   ];
 
   const colors = [
-    "fill-blue-500",
-    "fill-green-500",
-    "fill-red-500",
-    "fill-yellow-500",
+    "fill-green-800",
+    "fill-black dark:fill-white",
+    "fill-orange-800",
+    "fill-purple-800",
   ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setColorIndex((prevIndex) => (prevIndex + 1) % gradients.length);
+      setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
     }, 2000);
-
-    console.log(colorIndex);
 
     return () => clearInterval(intervalId);
   }, [colorIndex]);
@@ -34,7 +32,7 @@ const Limitless = () => {
         viewBox="0 0 878 232"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`transition-colors duration-500 ease-in-out ${gradients[colorIndex]}`}
+        className={`transition-colors duration-500 ease-in-out ${colors[colorIndex]}`}
       >
         <path
           fill-rule="evenodd"
