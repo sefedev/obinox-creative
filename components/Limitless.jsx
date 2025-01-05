@@ -27,12 +27,12 @@ const Limitless = () => {
   return (
     <>
       <svg
-        width="878"
+        width="600"
         height="232"
         viewBox="0 0 878 232"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`transition-colors duration-500 ease-in-out ${colors[colorIndex]}`}
+        className={`transition-colors size-[100%] duration-500 ease-in-out ${colors[colorIndex]}`}
       >
         <path
           fill-rule="evenodd"
