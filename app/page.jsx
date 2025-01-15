@@ -34,54 +34,52 @@ const Home = () => {
   ];
 
   // ANIMATE ON SCROLL
-  const elementRef = useRef(null);
+  // const elementRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          } else {
-            entry.target.classList.remove("is-visible");
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           entry.target.classList.add("is-visible");
+  //         } else {
+  //           entry.target.classList.remove("is-visible");
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 } // Trigger when 10% of the element is visible
+  //   );
+
+  //   if (elementRef.current) {
+  //     observer.observe(elementRef.current);
+  //   }
+
+  //   return () => {
+  //     if (elementRef.current) {
+  //       observer.unobserve(elementRef.current);
+  //     }
+  //   };
+  // }, []);
+
+  const gallery = [];
+
+  for (let i = 0; i < 30; i++) {
+    gallery.push(
+      <Image
+        key={i}
+        src={`/assets/images/home-design/design-${i + 1}.png`}
+        alt={`design-${i + 1}`}
+        width={400}
+        height={400}
+        className="size-[20x]"
+      />
     );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    };
-  }, []);
-
+  }
   return (
     <>
       {/* HERO SECTION */}
       <section className="relative flex flex-col items-center my-6 bg-transparent gap-y-8 dark:text-white">
         <div className="relative py-4 text-6xl font-semibold md:text-8xl">
-          {/* {gradients.map((gradient, index) => (
-            <h1
-              key={index}
-              className={`absolute inset-0 bg-clip-text text-transparent ${gradient} transition-opacity duration-1000 ease-in-out ${
-                currentIndex === index ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ WebkitTextFillColor: "transparent" }}
-            >
-              Limitless
-              <br /> Digital Designs
-            </h1>
-          ))} */}
-          {/* <span className="relative text-transparent">
-            Limitless
-            <br /> Digital Designs
-          </span> */}
           <span className="relative">
             <Limitless />
           </span>
@@ -94,6 +92,27 @@ const Home = () => {
         </p>
         <GradientButton title="Get Started" link="/booking" />
       </section>
+
+      <section className="grid w-[113%] grid-cols-1 gap-10 p-8 my-16 bg-neutral-900 sm:grid-cols-2 md:grid-cols-3">
+        {gallery}
+      </section>
+      <section className="pb-8">
+        <Link
+          href="/portfolio"
+          className="px-10 py-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
+        >
+          Click to see my portfolio
+        </Link>
+      </section>
+    </>
+  );
+};
+
+export default Home;
+
+const Prev = () => {
+  return (
+    <>
       {/* DESIGN EXPERIENCE SECTION */}
       <section className="flex-col text-white gap-6 pt-8 pb-12 md:pb-8 mt-20 mb-6 text-center flex-center bg-gradient-to-b w-screen from-[rgba(255,51,0,1)] to-[rgba(255,154,0,1)]">
         <h2 className="section_head">EXCITING DESIGN EXPERIENCE</h2>
@@ -302,5 +321,3 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
