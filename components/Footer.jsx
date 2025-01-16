@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -54,7 +53,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="mb-5">
+        {/* <div className="mb-5">
           <Link href={""}>
             <h2 className="font-semibold mb-1.5 text-primary-orange">
               Portfolio
@@ -78,7 +77,7 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="mb-5">
           <Link href={""}>

@@ -1,10 +1,11 @@
 "use client";
 
 import { ThemeContext } from "@/context/themes";
-import { ABOUT_SERVICE, WORK_FLOW } from "@/utils/constant";
+import { ABOUT_SERVICE, TESTIMONY, WORK_FLOW } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const { isDark } = useContext(ThemeContext);
@@ -76,6 +77,48 @@ const About = () => {
         />
       </section>
 
+      {/* WORKED WITH SECTION */}
+      <section className="flex-col gap-6 py-4 my-16 flex-center">
+        <h2 className="tracking-[0.2rem] font-light">WE HAVE WORKED WITH</h2>
+        <div className="relative flex flex-wrap my-6 md:overflow-hidden gap-x-10">
+          {/* FADED EDGES */}
+          <div
+            className={`absolute inset-x-0 top-0 h-full pointer-events-none ${
+              isDark && "hidden"
+            }`}
+          >
+            <div className="absolute left-0 z-50 w-20 h-full bg-gradient-to-r from-white to-transparent"></div>
+            <div className="absolute right-0 z-50 w-20 h-full bg-gradient-to-l from-white to-transparent"></div>
+          </div>
+          <div className="md:w-[48rem] gap-6 overflow-hidden">
+            <motion.div
+              className="flex w-[80%]"
+              animate={{ x: ["0%", "-100%"] }}
+              transition={{
+                repeat: Infinity,
+                duration: 10,
+                ease: "linear",
+              }}
+            >
+              {[...TESTIMONY, ...TESTIMONY].map(({ name, width }, id) => (
+                <div key={id} className="flex-shrink-0 mx-4">
+                  <Image
+                    src={`/assets/images/${
+                      isDark ? "dark" : "light"
+                    }/${name}.png`}
+                    alt={name}
+                    width={120}
+                    height={10}
+                    unoptimized={true}
+                    className={`h-[2.5rem]`}
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICE SECTION */}
       <section className="py-16">
         <h2 className="mb-8 section_subhead">Services Include</h2>
@@ -139,9 +182,9 @@ const About = () => {
 
       {/* CHECK DESIGN SECTION */}
       <section className="pb-8">
-        <p className="mb-10 text-sm">Check out some of our designs</p>
         <Link
-          href="/portfolio"
+          target="_blank"
+          href="https://www.behance.net/damilolakintol/"
           className="px-10 py-6 text-sm text-white transition duration-300 bg-gray-800 rounded-lg dark:bg-gray-700 dark:hover:text-gray-800 dark:hover:bg-white hover:bg-gray-800/40"
         >
           Click to see designs

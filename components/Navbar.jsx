@@ -30,7 +30,7 @@ const Navbar = () => {
 
   const nav_link = [
     { title: "About", link: "/about" },
-    { title: "Portfolio", link: "/portfolio" },
+    // { title: "Portfolio", link: "/portfolio" },
     { title: "Contact", link: "/contact" },
   ];
 
@@ -117,7 +117,7 @@ const Navbar = () => {
           width="25"
           height="25"
           viewBox="0 0 16 16"
-          className={`${isDark ? "fill-white" : "fill-black"} bi bi-list`}
+          className="bi bi-list fill-orange-400"
         >
           <path
             fillRule="evenodd"
@@ -188,11 +188,6 @@ const Navbar = () => {
               <li>
                 <Link href="/about" onClick={() => setOpenNav(false)}>
                   About
-                </Link>
-              </li>
-              <li>
-                <Link href="/portfolio" onClick={() => setOpenNav(false)}>
-                  Portfolio
                 </Link>
               </li>
               <li>
