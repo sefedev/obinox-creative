@@ -128,7 +128,8 @@ const ContactForm = () => {
             dami@obinox.co
           </a>
           <a
-            href="tel:+2349097453954"
+            target="_blank"
+            href="https://wa.me/2349097463954"
             role="button"
             className="flex items-center justify-center w-full gap-2 p-4 font-light text-black transition-all duration-150 bg-white rounded-e-lg hover:bg-neutral-500 hover:text-white group"
           >
@@ -138,7 +139,7 @@ const ContactForm = () => {
               width={20}
               height={20}
             />
-            +2349097453954
+            +2349097463954
           </a>
         </div>
       </div>

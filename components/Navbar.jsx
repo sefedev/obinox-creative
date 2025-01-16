@@ -47,7 +47,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="flex gap-2 max-w-fit flex-center">
           <span
-            className={`size-[4rem] p-0.5 grid place-items-center rounded-full border-2 transition-colors duration-500 ${colors[colorIndex]}`}
+            className={`size-[4rem] p-0.5 grid place-items-center rounded-full border-2 transition-colors duration-500 dark:border-white border-black`}
           >
             <Image
               src="/assets/images/obinox-logo.png"
@@ -184,7 +184,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <ul className="flex flex-col gap-2 mt-4 text-xl">
+            <ul className="flex flex-col items-center gap-2 mt-4 text-xl">
               <li>
                 <Link href="/about" onClick={() => setOpenNav(false)}>
                   About
