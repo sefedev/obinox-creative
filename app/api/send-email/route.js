@@ -15,7 +15,7 @@ export async function POST(req) {
   try {
     const formData = await req.formData();
 
-    // const files = formData.getAll("files");
+    const files = formData.getAll("files");
     const name = formData.get("name");
     const number = formData.get("number");
     const gender = formData.get("gender");
@@ -23,6 +23,7 @@ export async function POST(req) {
     const details = formData.get("details");
     const service = formData.get("service");
 
+    // WRITING TO FILESYSTEM
     // let attachments = [];
 
     // if (files.length > 0) {
@@ -42,6 +43,15 @@ export async function POST(req) {
     //     });
     //   }
     // }
+
+    // WITHOUT WRITING TO FILESYSTEM
+    const attachments = await Promise.all(
+      files.map(async (file) => ({
+        filename: file.name,
+        content: Buffer.from(await file.arrayBuffer()),
+        contentType: file.type,
+      }))
+    );
 
     // Create a transporter object using your email service credentials
     const transporter = nodemailer.createTransport({
@@ -66,7 +76,7 @@ export async function POST(req) {
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Message:</strong> ${details}</p>
         `,
-      // attachments: attachments,
+      attachments: attachments,
     };
 
     // Send the email
